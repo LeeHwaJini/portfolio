@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Creative Developer</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Pretendard Dynamic Subset (한글 전용) -->
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+      <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-word">PORTFOLIO</div>
+      </div>
+      <div class="preloader-pixels"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">PORTFOLIO</div>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Work</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" data-section="home">
+      <div class="container-large">
+        <div class="hero-label">Creative Developer & Designer</div>
+        <h1 class="hero-title">
+          <span class="line">
+            <span class="word">Crafting Digital</span>
+          </span>
+          <span class="line">
+            <span class="word">Experiences</span>
+          </span>
+        </h1>
+        <p class="hero-subtitle">
+          디지털 경험을 디자인하고<br />
+          코드로 실현합니다
+        </p>
+        <div class="hero-scroll">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" data-section="about">
+      <div class="container-large">
+        <div class="section-label">
+          <span class="label-number">01</span>
+          <span class="label-text">About</span>
+        </div>
+        <div class="about-content">
+          <div>
+            <h2 class="about-title">
+              디자인을 코드로<br />구현하는 퍼블리셔입니다
+            </h2>
+            <p class="about-description">
+              GSAP 애니메이션과 반응형 퍼블리싱으로 인터랙티브한 웹을 만듭니다.
+              신규 구축부터 사이트 운영까지, 다양한 프로젝트 경험을 보유하고
+              있습니다.
+            </p>
+          </div>
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-number" data-count="50">0</div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="4">0</div>
+              <div class="stat-label">Years of Experience</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="30">0</div>
+              <div class="stat-label">Happy Clients</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise Section - Interactive Skills Canvas -->
+    <section class="expertise-section" data-section="expertise">
+      <div class="container-large">
+        <div class="section-label">
+          <span class="label-number">02</span>
+          <span class="label-text">Expertise</span>
+        </div>
+
+        <div class="skills-canvas-wrapper">
+          <div class="tech-cluster">
+            <div class="tech-node tech-node-center" data-tech="Publishing">
+              <div class="tech-icon tech-icon-publishing">
+                <img src="./images/ico_controllers.svg" alt="" />
+              </div>
+              <div class="tech-tooltip">HTML5 · Semantic Markup</div>
+            </div>
+
+            <div class="tech-node tech-node-1" data-tech="Vue.js">
+              <div class="tech-icon tech-icon-vue">
+                <img src="./images/ico_vue.svg" alt="vue" />
+              </div>
+              <div class="tech-tooltip">Vue 3 · Vue 2 · Quasar</div>
+            </div>
+
+            <div class="tech-node tech-node-2" data-tech="CSS">
+              <div class="tech-icon tech-icon-css">
+                <img src="./images/ico_css.svg" alt="css" />
+              </div>
+              <div class="tech-tooltip">SCSS · Animation</div>
+            </div>
+
+            <div class="tech-node tech-node-3" data-tech="GSAP">
+              <div class="tech-icon tech-icon-gsap">
+                <img src="./images/ico_animations.svg" alt="animations" />
+              </div>
+              <div class="tech-tooltip">ScrollTrigger · Timeline</div>
+            </div>
+
+            <!-- JavaScript Logo -->
+            <div class="tech-node tech-node-4" data-tech="JavaScript">
+              <div class="tech-icon tech-icon-js">
+                <img src="./images/ico_js.svg" alt="js" />
+              </div>
+              <div class="tech-tooltip">ES6 · DOM API</div>
+            </div>
+
+            <!-- Connection Lines -->
+            <svg class="connection-lines">
+              <line
+                class="connection-line"
+                x1="50%"
+                y1="50%"
+                x2="25%"
+                y2="20%"
+              />
+              <line
+                class="connection-line"
+                x1="50%"
+                y1="50%"
+                x2="75%"
+                y2="80%"
+              />
+              <line
+                class="connection-line"
+                x1="50%"
+                y1="50%"
+                x2="90%"
+                y2="50%"
+              />
+              <line
+                class="connection-line"
+                x1="50%"
+                y1="50%"
+                x2="10%"
+                y2="75%"
+              />
+            </svg>
+
+            <!-- Interaction Hint -->
+            <div class="interaction-hint">
+              <span class="hint-icon">→</span>
+              <span>Hover to interact</span>
+            </div>
+          </div>
+
+          <!-- Right: Skills Progress -->
+          <div class="skills-progress-container">
+            <h3 class="skills-title">
+              Bridging <span class="highlight">Motion</span> & Development
+            </h3>
+
+            <div class="skills-list">
+              <!-- Skill 1 -->
+              <div class="skill-item">
+                <div class="skill-header">
+                  <h4 class="skill-name">GSAP Animation</h4>
+
+                  <span class="skill-percentage" data-target="80">0%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="80"></div>
+                </div>
+              </div>
+
+              <!-- Skill 2 -->
+              <div class="skill-item">
+                <div class="skill-header">
+                  <h4 class="skill-name">CSS / SCSS</h4>
+
+                  <span class="skill-percentage" data-target="100">0%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="100"></div>
+                </div>
+              </div>
+
+              <!-- Skill 3 -->
+              <div class="skill-item">
+                <div class="skill-header">
+                  <h4 class="skill-name">Vue.js Development</h4>
+
+                  <span class="skill-percentage" data-target="80">0%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="80"></div>
+                </div>
+              </div>
+
+              <!-- Skill 4 -->
+              <div class="skill-item">
+                <div class="skill-header">
+                  <h4 class="skill-name">Publishing</h4>
+
+                  <span class="skill-percentage" data-target="100">0%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Showcase Section -->
+    <section class="tech-showcase-section" data-section="experience">
+      <div class="section-label">
+        <span class="label-number">03</span>
+        <span class="label-text">Experience</span>
+      </div>
+
+
+      <ul class="showcase-carousel">
+        <li class="carousel-item">
+          <div class="num">01</div>
+          <div class="carousel-text-area">
+            <div class="title">신규 구축</div>
+            <p class="description">처음부터 끝까지, 완전한 웹사이트 구축</p>
+            <div class="features">
+              <div class="feature-item">#컴포넌트 관리</div>
+              <div class="feature-item">#반응형 퍼블리싱</div>
+            </div>
+          </div>
+        </li>
+
+        <li class="carousel-item">
+          <div class="num">02</div>
+          <div class="carousel-text-area">
+            <div class="title">사이트 리뉴얼</div>
+            <p class="description">리뉴얼 프로젝트</p>
+            <div class="features">
+              <div class="feature-item">#코드 분석 및 개선</div>
+              <div class="feature-item">#UI/UX 개선</div>
+            </div>
+          </div>
+        </li>
+
+        <li class="carousel-item">
+          <div class="num">03</div>
+          <div class="carousel-text-area">
+            <div class="title">운영 & 유지보수</div>
+            <p class="description">안정적인 서비스 운영</p>
+            <div class="features">
+              <div class="feature-item">#일일 이슈 대응</div>
+              <div class="feature-item">#콘텐츠 업데이트</div>
+              <div class="feature-item">#버그 수정 및 개선</div>
+            </div>
+          </div>
+        </li>
+
+        <li class="carousel-item">
+          <div class="num">04</div>
+          <div class="carousel-text-area">
+            <div class="title">고도몰 커스터마이징</div>
+            <p class="description">E-commerce 솔루션</p>
+            <div class="features">
+              <div class="feature-item">#스킨 커스터마이징</div>
+              <div class="feature-item">#디자인 시안 퍼블리싱</div>
+            </div>
+          </div>
+        </li>
+
+        <li class="carousel-item">
+          <div class="num">05</div>
+          <div class="carousel-text-area">
+            <div class="title">카페24 쇼핑몰</div>
+            <p class="description">쇼핑몰 솔루션</p>
+            <div class="features">
+              <div class="feature-item">#스킨 커스터마이징</div>
+              <div class="feature-item">#디자인 시안 퍼블리싱</div>
+            </div>
+          </div>
+        </li>
+
+        <li class="carousel-item">
+          <div class="num">06</div>
+          <div class="carousel-text-area">
+            <div class="title">랜딩페이지 제작</div>
+            <p class="description">전환율 높은 페이지 구축</p>
+            <div class="features">
+              <div class="feature-item">#빠른 퍼블리싱</div>
+              <div class="feature-item">#반응형 퍼블리싱</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" data-section="projects">
+      <div class="projects-header">
+        <div class="section-label">
+          <span class="label-number">04</span>
+          <span class="label-text">Selected Work</span>
+        </div>
+
+        <a href="#" class="view-all-btn">
+          <span class="view-all-text">
+            <span class="arrow">↗</span>
+            <span>View All</span>
+            <span class="arrow">↗</span>
+            <span>View All</span>
+            <span class="arrow">↗</span>
+            <span>View All</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="projects-scroll-wrapper">
+        <div class="projects-scroll-container">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./images/portfoilo_riman.png" alt="portfoilo_riman" />
+            </div>
+            <div class="project-info">
+              <div class="project-category">반응형 WEB</div>
+              <h3 class="project-title">리만코리아</h3>
+              <p class="project-description">리만코리아 사이트 퍼블리싱</p>
+
+              <div class="features">
+                <div class="feature-item">#Vue3</div>
+                <div class="feature-item">#Quasar</div>
+                <div class="feature-item">#GSAP</div>
+                <div class="feature-item">#SCSS</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./images/portfolio_qbid.png" alt="portfolio_qbid" />
+            </div>
+            <div class="project-info">
+              <div class="project-category">적응형 WEB</div>
+              <h3 class="project-title">Q-bid</h3>
+              <p class="project-description">Q-bid 웹사이트 퍼블리싱</p>
+
+              <div class="features">
+                <div class="feature-item">#Vue2</div>
+                <div class="feature-item">#SCSS</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="./images/portfoilo_medical_center.png"
+                alt="portfoilo_medical_center"
+              />
+            </div>
+            <div class="project-info">
+              <div class="project-category">APP</div>
+              <h3 class="project-title">이화의료원</h3>
+              <p class="project-description">이화의료원 APP 퍼블리싱</p>
+
+              <div class="features">
+                <div class="feature-item">#ReactNative</div>
+                <div class="feature-item">#CSS</div>
+                <div class="feature-item">#JavaScript</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./images/portfoilo_dari.png" alt="" />
+            </div>
+            <div class="project-info">
+              <div class="project-category">WEB</div>
+              <h3 class="project-title">DARI</h3>
+              <p class="project-description">마케팅 통합 툴 DARI 퍼블리싱</p>
+              <div class="features">
+                <div class="feature-item">#HTML</div>
+                <div class="feature-item">#CSS</div>
+                <div class="feature-item">#JavaScript</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="./images/portfoilo_loftshop.png"
+                alt="portfoilo_loftshop"
+              />
+            </div>
+            <div class="project-info">
+              <div class="project-category">고도몰</div>
+              <h3 class="project-title">로프트샵</h3>
+              <p class="project-description">로프트샵 사이트 리뉴얼</p>
+
+              <div class="features">
+                <div class="feature-item">#고도몰</div>
+                <div class="feature-item">#HTML</div>
+                <div class="feature-item">#CSS</div>
+                <div class="feature-item">#jQuery</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./images/portfoilo_inus.png" alt="" />
+            </div>
+            <div class="project-info">
+              <div class="project-category">카페24</div>
+              <h3 class="project-title">이누스 프렌즈몰</h3>
+              <p class="project-description">
+                이누스프렌즈몰 UX/UI 개선 작업 운영
+              </p>
+
+              <div class="features">
+                <div class="feature-item">#카페24</div>
+                <div class="feature-item">#HTML</div>
+                <div class="feature-item">#CSS</div>
+                <div class="feature-item">#jQuery</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scroll Sequence Section -->
+    <section class="scroll-sequence-section">
+      <div class="sequence-container">
+        <!-- 폴더 그래픽 -->
+        <div class="folder-container">
+          <!-- 폴더 뒷면 -->
+          <div class="folder-back"></div>
+          <!-- 폴더 앞면 -->
+          <div class="folder-front"></div>
+          <!-- 폴더 탭 -->
+          <div class="folder-tab"></div>
+        </div>
+
+        <!-- Card Stack (폴더 안에서 나옴) -->
+        <div class="card-stack">
+          <div class="feature-card card-1">
+            <div class="card-content">
+              <div class="card-icon">
+                <img src="./images/ico_chart.svg" alt="" />
+              </div>
+              <h3 class="card-title">Publishing</h3>
+              <p class="card-desc">
+                HTML5, CSS3, JavaScript<br />SCSS, 반응형 퍼블리싱
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card card-2">
+            <div class="card-content">
+              <div class="card-icon">
+                <img src="./images/ico_circle_chart.svg" alt="" />
+              </div>
+              <h3 class="card-title">Framework & Library</h3>
+              <p class="card-desc">
+                Vue.js, Quasar, ReactNative<br />GSAP, ScrollTrigger
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card card-3">
+            <div class="card-content">
+              <div class="card-icon">
+                <img src="./images/ico_message.svg" alt="" />
+              </div>
+              <h3 class="card-title">Tools & Collaboration</h3>
+              <p class="card-desc">
+                Git, SVN<br />Figma, Zeplin, Photoshop, XD
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Final Text -->
+        <div class="sequence-text">
+          <h2 class="sequence-title">
+            <span class="text-left">Creating Digital</span>
+            <span class="text-right">Experiences</span>
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container-large footer-content">
+        <div>
+          <div class="footer-logo">PORTFOLIO</div>
+          <p class="footer-text">&copy; 2026. All rights reserved.</p>
+        </div>
+        <a href="#home" class="footer-link">Back to Top ↑</a>
+      </div>
+    </footer>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+    <!-- Main Script (Modular) -->
+    <script type="module" src="js/main.js"></script>
+
+    <!-- Fallback for old script.js (will be removed after testing) -->
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>

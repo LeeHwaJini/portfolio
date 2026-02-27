@@ -1,0 +1,47 @@
+/* ===================================
+   SCSS Variables
+   =================================== */
+$color-black: #222222;
+$color-white: #ffffff;
+$color-gray: #515151;
+$color-light-gray: #f5f5f5;
+$color-blue: #54cbf5;
+$color-border: #e0e0e0;
+
+// 한글: Pretendard
+// 영문: Poppins
+$font-primary:
+  "Pretendard Variable",
+  "Poppins",
+  -apple-system,
+  BlinkMacSystemFont,
+  system-ui,
+  sans-serif;
+$font-english:
+  "Poppins",
+  -apple-system,
+  BlinkMacSystemFont,
+  system-ui,
+  sans-serif;
+$font-display: "Poppins", "Pretendard Variable", sans-serif;
+
+$spacing-xs: 1rem;
+$spacing-sm: 2rem;
+$spacing-md: 4rem;
+$spacing-lg: 6rem;
+$spacing-xl: 8rem;
+$spacing-xxl: 10rem;
+
+$transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-quick: all 0.3s ease;
+
+// Magic Text Colors
+$color-magic-primary: #7998f2;
+$color-magic-secondary: #74e7fa;
+$color-magic-accent: #5a7fd9;
+
+// Magic Text Sizes
+$magic-star-size: 20px;
+$magic-animation-duration: 700ms;
+$magic-rotate-duration: 1000ms;
+$magic-pan-duration: 3s;

@@ -1,0 +1,32 @@
+/* ===================================
+   SCSS Mixins
+   =================================== */
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin absolute-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin hover-lift($distance: -10px) {
+  transition: $transition-smooth;
+
+  &:hover {
+    transform: translateY($distance);
+  }
+}
+
+@mixin section-padding {
+  padding: $spacing-xl 0;
+}
+
+@mixin container-padding($size: 80px) {
+  padding: 0 $size;
+}

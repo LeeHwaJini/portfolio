@@ -1,0 +1,21 @@
+{
+  "name": "minimal-portfolio",
+  "version": "1.0.0",
+  "description": "Modern Minimal Portfolio with GSAP",
+  "scripts": {
+    "sass": "sass style.scss style.css --watch",
+    "sass:build": "sass style.scss style.css --style compressed",
+    "start": "npm run sass"
+  },
+  "keywords": [
+    "portfolio",
+    "gsap",
+    "scss",
+    "minimal"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.70.0"
+  }
+}
