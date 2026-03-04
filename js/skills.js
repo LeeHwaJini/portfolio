@@ -4,46 +4,6 @@
 const { gsap, ScrollTrigger } = window;
 
 export function initSkillsAnimations() {
-  // About 제목 Text Split
-  // const aboutTitle = document.querySelector(".about-title");
-  // if (aboutTitle) {
-  //   const text = aboutTitle.innerHTML;
-  //   const lines = text.split("<br>");
-  //   aboutTitle.innerHTML = "";
-
-  //   lines.forEach((line, lineIndex) => {
-  //     const lineDiv = document.createElement("div");
-  //     lineDiv.style.overflow = "hidden";
-
-  //     const words = line.split(" ");
-  //     words.forEach((word) => {
-  //       const wordSpan = document.createElement("span");
-  //       wordSpan.style.display = "inline-block";
-  //       wordSpan.style.marginRight = "0.3em";
-  //       wordSpan.textContent = word;
-  //       lineDiv.appendChild(wordSpan);
-  //     });
-
-  //     aboutTitle.appendChild(lineDiv);
-  //     if (lineIndex < lines.length - 1) {
-  //       aboutTitle.appendChild(document.createElement("br"));
-  //     }
-  //   });
-
-  //   gsap.from(".about-title div span", {
-  //     scrollTrigger: {
-  //       trigger: ".about-title",
-  //       start: "top 80%",
-  //       toggleActions: "play none none reverse",
-  //     },
-  //     y: 100,
-  //     opacity: 0,
-  //     stagger: 0.05,
-  //     duration: 0.8,
-  //     ease: "power3.out",
-  //   });
-  // }
-
   // About Description
   gsap.from(".about-description", {
     scrollTrigger: {

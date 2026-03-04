@@ -1,6 +1,7 @@
 // ===================================
 // Preloader - Space Invaders + Pixel Explosion
 // ===================================
+import { lerp, scale } from './utils.js';
 const { gsap } = window;
 
 export function initPreloader(onComplete) {
@@ -9,12 +10,6 @@ export function initPreloader(onComplete) {
 
   const wordEl = document.querySelector('.preloader-word');
   const pixelsContainer = document.querySelector('.preloader-pixels');
-
-  // ===================================
-  // 유틸 함수
-  // ===================================
-  const lerp = (v0, v1, t) => v0 * (1 - t) + v1 * t;
-  const scale = (a, b, c, d, e) => (a - b) * (e - d) / (c - b) + d;
 
   // ===================================
   // Space Invaders 옵션

@@ -258,94 +258,447 @@
     </section>
 
     <!-- Experience Showcase Section -->
-    <section class="tech-showcase-section" data-section="experience">
+    <section
+      class="tech-showcase-section circular-slider-section"
+      data-section="experience"
+    >
       <div class="section-label">
         <span class="label-number">03</span>
         <span class="label-text">Experience</span>
       </div>
 
+      <!-- SVG Mask -->
+      <svg
+        width="1200px"
+        height="600px"
+        viewBox="0 0 1200 600"
+        style="position: absolute; opacity: 0"
+      >
+        <defs>
+          <clipPath id="quarterMask">
+            <path
+              d="M299.001,26.649L0,325.65c330.267,330.268,865.736,330.268,1196.004,0L897.003,26.649C731.868,191.784,464.136,191.784,299.001,26.649z"
+            />
+          </clipPath>
+        </defs>
+      </svg>
 
-      <ul class="showcase-carousel">
-        <li class="carousel-item">
-          <div class="num">01</div>
-          <div class="carousel-text-area">
-            <div class="title">신규 구축</div>
-            <p class="description">처음부터 끝까지, 완전한 웹사이트 구축</p>
-            <div class="features">
-              <div class="feature-item">#컴포넌트 관리</div>
-              <div class="feature-item">#반응형 퍼블리싱</div>
+      <!-- Circular Slider -->
+      <div class="content">
+        <ul class="featured-slider" id="wheel">
+          <li class="active">
+            <div class="image">
+              <img src="./images/test1.png" alt="" />
+            </div>
+
+            <div class="detail-content active" data-detail="0">
+              <div class="num">01</div>
+              <h2 class="detail-title">신규 구축</h2>
+              <p class="detail-desc">처음부터 끝까지, 완전한 웹사이트 구축</p>
+              <div class="detail-features">
+                <span class="feature-tag">#컴포넌트 관리</span>
+                <span class="feature-tag">#반응형 퍼블리싱</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="image">
+              <img src="./images/test3.png" alt="" />
+            </div>
+
+            <div class="detail-content" data-detail="1">
+              <div class="num">02</div>
+              <h2 class="detail-title">사이트 리뉴얼</h2>
+              <p class="detail-desc">리뉴얼 프로젝트</p>
+              <div class="detail-features">
+                <span class="feature-tag">#코드 분석</span>
+                <span class="feature-tag">#UI/UX 개선</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="image">
+              <img src="./images/test2.png" alt="" />
+            </div>
+
+            <div class="detail-content" data-detail="2">
+              <div class="num">03</div>
+              <h2 class="detail-title">운영 & 유지보수</h2>
+              <p class="detail-desc">안정적인 서비스 운영</p>
+              <div class="detail-features">
+                <span class="feature-tag">#이슈 대응</span>
+                <span class="feature-tag">#콘텐츠 업데이트</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="image">
+              <img src="./images/test4.png" alt="" />
+            </div>
+
+            <div class="detail-content" data-detail="3">
+              <div class="num">04</div>
+              <h2 class="detail-title">랜딩페이지 제작</h2>
+              <p class="detail-desc">전환율 높은 페이지 구축</p>
+              <div class="detail-features">
+                <span class="feature-tag">#빠른 퍼블리싱</span>
+                <span class="feature-tag">#반응형</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="featured-slider-btn-area">
+        <button class="prev nav-prev" aria-label="이전">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <button class="next nav-next" aria-label="다음">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Platforms & Solutions Section -->
+    <section class="platforms-section" data-section="platforms">
+      <!-- Aurora Background -->
+      <div class="aurora-bg" aria-hidden="true">
+        <svg
+          class="fluid-ribbons"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 900"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <defs>
+            <filter id="platform-blur-sm">
+              <feGaussianBlur stdDeviation="16" />
+            </filter>
+            <filter id="platform-blur-md">
+              <feGaussianBlur stdDeviation="24" />
+            </filter>
+            <filter id="platform-blur-lg">
+              <feGaussianBlur stdDeviation="34" />
+            </filter>
+
+            <linearGradient id="pg1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="white" stop-opacity="0" />
+              <stop offset="18%" stop-color="white" stop-opacity="0.72" />
+              <stop offset="48%" stop-color="#d4f2ff" stop-opacity="0.68" />
+              <stop offset="78%" stop-color="white" stop-opacity="0.62" />
+              <stop offset="100%" stop-color="white" stop-opacity="0" />
+            </linearGradient>
+
+            <linearGradient id="pg2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#6dcfee" stop-opacity="0" />
+              <stop offset="22%" stop-color="#8de0ff" stop-opacity="0.52" />
+              <stop offset="52%" stop-color="#b8eeff" stop-opacity="0.58" />
+              <stop offset="80%" stop-color="#8de0ff" stop-opacity="0.42" />
+              <stop offset="100%" stop-color="#6dcfee" stop-opacity="0" />
+            </linearGradient>
+
+            <linearGradient id="pg3" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="white" stop-opacity="0" />
+              <stop offset="28%" stop-color="white" stop-opacity="0.55" />
+              <stop offset="58%" stop-color="#c8ebff" stop-opacity="0.58" />
+              <stop offset="85%" stop-color="white" stop-opacity="0.42" />
+              <stop offset="100%" stop-color="white" stop-opacity="0" />
+            </linearGradient>
+
+            <radialGradient id="pg4" cx="88%" cy="12%" r="38%">
+              <stop offset="0%" stop-color="#c0e6fa" stop-opacity="0.58" />
+              <stop offset="100%" stop-color="#c0e6fa" stop-opacity="0" />
+            </radialGradient>
+
+            <radialGradient id="pg5" cx="8%" cy="90%" r="32%">
+              <stop offset="0%" stop-color="#a8dcf8" stop-opacity="0.45" />
+              <stop offset="100%" stop-color="#a8dcf8" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+
+          <rect width="1440" height="900" fill="url(#pg4)" />
+          <rect width="1440" height="900" fill="url(#pg5)" />
+
+          <rect
+            class="ribbon ribbon-1"
+            x="-200"
+            y="60"
+            width="1840"
+            height="210"
+            rx="105"
+            fill="url(#pg1)"
+            filter="url(#platform-blur-sm)"
+            transform="rotate(-22, 720, 450)"
+          />
+
+          <rect
+            class="ribbon ribbon-2"
+            x="-200"
+            y="360"
+            width="1840"
+            height="195"
+            rx="97"
+            fill="url(#pg2)"
+            filter="url(#platform-blur-md)"
+            transform="rotate(14, 720, 450)"
+          />
+
+          <rect
+            class="ribbon ribbon-3"
+            x="-200"
+            y="640"
+            width="1840"
+            height="175"
+            rx="87"
+            fill="url(#pg3)"
+            filter="url(#platform-blur-sm)"
+            transform="rotate(-11, 720, 450)"
+          />
+        </svg>
+      </div>
+
+      <div class="section-label">
+        <span class="label-number">04</span>
+        <span class="label-text">Platforms & Solutions</span>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="platform-filters">
+        <button class="filter-btn active" data-filter="all">ALL</button>
+        <button class="filter-btn" data-filter="ecommerce">쇼핑몰</button>
+        <button class="filter-btn" data-filter="web">반응형 WEB</button>
+        <button class="filter-btn" data-filter="framework">프레임워크</button>
+      </div>
+
+      <!-- Swiper Container -->
+      <div class="platform-swiper-container">
+        <!-- Navigation Buttons -->
+        <button class="swiper-button-prev platform-prev">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M15 18L9 12L15 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+
+        <div class="swiper platform-swiper">
+          <div class="swiper-wrapper">
+            <!-- 쇼핑몰 플랫폼 -->
+            <div class="swiper-slide" data-category="ecommerce">
+              <div class="platform-card">
+                <div class="platform-icon">🛒</div>
+                <div class="platform-content">
+                  <h3 class="platform-title">고도몰</h3>
+                  <p class="platform-desc">
+                    고도몰 쇼핑몰 스킨 커스터마이징 및 제작
+                  </p>
+                  <ul class="platform-features">
+                    <li>스킨 커스터마이징</li>
+                    <li>디자인 시안 퍼블리싱</li>
+                    <li>반응형 전환</li>
+                  </ul>
+                </div>
+                <div class="platform-tags">
+                  <span class="tag">#HTML</span>
+                  <span class="tag">#CSS</span>
+                  <span class="tag">#jQuery</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide" data-category="ecommerce">
+              <div class="platform-card">
+                <div class="platform-icon">☕</div>
+                <div class="platform-content">
+                  <h3 class="platform-title">카페24</h3>
+                  <p class="platform-desc">카페24 쇼핑몰 템플릿 제작 및 수정</p>
+                  <ul class="platform-features">
+                    <li>스마트디자인 편집</li>
+                    <li>템플릿 커스터마이징</li>
+                    <li>UX/UX 개선</li>
+                  </ul>
+                </div>
+                <div class="platform-tags">
+                  <span class="tag">#HTML</span>
+                  <span class="tag">#CSS</span>
+                  <span class="tag">#JavaScript</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 반응형 웹 -->
+            <div class="swiper-slide" data-category="web">
+              <div class="platform-card">
+                <div class="platform-icon">📱</div>
+                <div class="platform-content">
+                  <h3 class="platform-title">반응형 웹사이트</h3>
+                  <p class="platform-desc">
+                    모든 디바이스 최적화 반응형 퍼블리싱
+                  </p>
+                  <ul class="platform-features">
+                    <li>모바일 최적화</li>
+                    <li>크로스 브라우징</li>
+                    <li>웹 접근성</li>
+                  </ul>
+                </div>
+                <div class="platform-tags">
+                  <span class="tag">#HTML5</span>
+                  <span class="tag">#SCSS</span>
+                  <span class="tag">#Responsive</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide" data-category="web">
+              <div class="platform-card">
+                <div class="platform-icon">🚀</div>
+                <div class="platform-content">
+                  <h3 class="platform-title">랜딩페이지</h3>
+                  <p class="platform-desc">전환율 높은 랜딩페이지 제작</p>
+                  <ul class="platform-features">
+                    <li>빠른 제작</li>
+                    <li>인터랙션 구현</li>
+                    <li>성능 최적화</li>
+                  </ul>
+                </div>
+                <div class="platform-tags">
+                  <span class="tag">#HTML</span>
+                  <span class="tag">#CSS</span>
+                  <span class="tag">#GSAP</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 프레임워크 -->
+            <div class="swiper-slide" data-category="framework">
+              <div class="platform-card">
+                <div class="platform-icon">⚡</div>
+                <div class="platform-content">
+                  <h3 class="platform-title">Vue.js</h3>
+                  <p class="platform-desc">Vue 2/3 기반 SPA 퍼블리싱</p>
+                  <ul class="platform-features">
+                    <li>컴포넌트 구조</li>
+                    <li>상태 관리</li>
+                    <li>Quasar 프레임워크</li>
+                  </ul>
+                </div>
+                <div class="platform-tags">
+                  <span class="tag">#Vue3</span>
+                  <span class="tag">#Quasar</span>
+                  <span class="tag">#SCSS</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide" data-category="framework">
+              <div class="platform-card">
+                <div class="platform-icon">📦</div>
+                <div class="platform-content">
+                  <h3 class="platform-title">React Native</h3>
+                  <p class="platform-desc">크로스 플랫폼 앱 퍼블리싱</p>
+                  <ul class="platform-features">
+                    <li>네이티브 앱 UI</li>
+                    <li>크로스 플랫폼</li>
+                    <li>스타일 컴포넌트</li>
+                  </ul>
+                </div>
+                <div class="platform-tags">
+                  <span class="tag">#ReactNative</span>
+                  <span class="tag">#JavaScript</span>
+                  <span class="tag">#CSS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 기타 -->
+            <div class="swiper-slide" data-category="web">
+              <div class="platform-card">
+                <div class="platform-icon">✨</div>
+                <div class="platform-content">
+                  <h3 class="platform-title">GSAP 애니메이션</h3>
+                  <p class="platform-desc">고급 인터랙션 애니메이션 구현</p>
+                  <ul class="platform-features">
+                    <li>ScrollTrigger</li>
+                    <li>Timeline 제어</li>
+                    <li>3D Transform</li>
+                  </ul>
+                </div>
+                <div class="platform-tags">
+                  <span class="tag">#GSAP</span>
+                  <span class="tag">#ScrollTrigger</span>
+                  <span class="tag">#Animation</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide" data-category="web">
+              <div class="platform-card">
+                <div class="platform-icon">🎨</div>
+                <div class="platform-content">
+                  <h3 class="platform-title">웹 접근성</h3>
+                  <p class="platform-desc">WCAG 2.1 기준 웹 접근성 준수</p>
+                  <ul class="platform-features">
+                    <li>시맨틱 마크업</li>
+                    <li>키보드 접근성</li>
+                    <li>스크린리더 대응</li>
+                  </ul>
+                </div>
+                <div class="platform-tags">
+                  <span class="tag">#Accessibility</span>
+                  <span class="tag">#WAI-ARIA</span>
+                  <span class="tag">#Semantic</span>
+                </div>
+              </div>
             </div>
           </div>
-        </li>
+        </div>
 
-        <li class="carousel-item">
-          <div class="num">02</div>
-          <div class="carousel-text-area">
-            <div class="title">사이트 리뉴얼</div>
-            <p class="description">리뉴얼 프로젝트</p>
-            <div class="features">
-              <div class="feature-item">#코드 분석 및 개선</div>
-              <div class="feature-item">#UI/UX 개선</div>
-            </div>
-          </div>
-        </li>
-
-        <li class="carousel-item">
-          <div class="num">03</div>
-          <div class="carousel-text-area">
-            <div class="title">운영 & 유지보수</div>
-            <p class="description">안정적인 서비스 운영</p>
-            <div class="features">
-              <div class="feature-item">#일일 이슈 대응</div>
-              <div class="feature-item">#콘텐츠 업데이트</div>
-              <div class="feature-item">#버그 수정 및 개선</div>
-            </div>
-          </div>
-        </li>
-
-        <li class="carousel-item">
-          <div class="num">04</div>
-          <div class="carousel-text-area">
-            <div class="title">고도몰 커스터마이징</div>
-            <p class="description">E-commerce 솔루션</p>
-            <div class="features">
-              <div class="feature-item">#스킨 커스터마이징</div>
-              <div class="feature-item">#디자인 시안 퍼블리싱</div>
-            </div>
-          </div>
-        </li>
-
-        <li class="carousel-item">
-          <div class="num">05</div>
-          <div class="carousel-text-area">
-            <div class="title">카페24 쇼핑몰</div>
-            <p class="description">쇼핑몰 솔루션</p>
-            <div class="features">
-              <div class="feature-item">#스킨 커스터마이징</div>
-              <div class="feature-item">#디자인 시안 퍼블리싱</div>
-            </div>
-          </div>
-        </li>
-
-        <li class="carousel-item">
-          <div class="num">06</div>
-          <div class="carousel-text-area">
-            <div class="title">랜딩페이지 제작</div>
-            <p class="description">전환율 높은 페이지 구축</p>
-            <div class="features">
-              <div class="feature-item">#빠른 퍼블리싱</div>
-              <div class="feature-item">#반응형 퍼블리싱</div>
-            </div>
-          </div>
-        </li>
-      </ul>
+        <button class="swiper-button-next platform-next">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M9 18L15 12L9 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section class="projects-section" data-section="projects">
       <div class="projects-header">
         <div class="section-label">
-          <span class="label-number">04</span>
+          <span class="label-number">05</span>
           <span class="label-text">Selected Work</span>
         </div>
 
@@ -527,6 +880,9 @@
               </p>
             </div>
           </div>
+
+          <div class="cir cir1"></div>
+          <div class="cir cir2"></div>
         </div>
 
         <!-- Final Text -->
@@ -554,6 +910,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+    <!-- Swiper CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Main Script (Modular) -->
     <script type="module" src="js/main.js"></script>

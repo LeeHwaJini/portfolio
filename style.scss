@@ -9,6 +9,76 @@
 @import "scss/reset";
 
 /* ===================================
+   Fluid Ribbon Background — SVG 기반 (tech-showcase-section 전용)
+   =================================== */
+.tech-showcase-section .aurora-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.tech-showcase-section .fluid-ribbons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// 리본 1 — 상단 흰 파형 (-22deg)
+.tech-showcase-section .ribbon-1 {
+  transform-origin: 720px 450px;
+  transform-box: fill-box;
+  animation: ribbon-sway-1 22s ease-in-out infinite;
+}
+
+// 리본 2 — 중간 청록 파형 (+14deg)
+.tech-showcase-section .ribbon-2 {
+  transform-origin: 720px 450px;
+  transform-box: fill-box;
+  animation: ribbon-sway-2 28s ease-in-out infinite;
+}
+
+// 리본 3 — 하단 흰 파형 (-11deg)
+.tech-showcase-section .ribbon-3 {
+  transform-origin: 720px 450px;
+  transform-box: fill-box;
+  animation: ribbon-sway-3 25s ease-in-out infinite;
+}
+
+@keyframes ribbon-sway-1 {
+  0%,
+  100% {
+    transform: rotate(-22deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(-20deg) translateY(32px);
+  }
+}
+
+@keyframes ribbon-sway-2 {
+  0%,
+  100% {
+    transform: rotate(14deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(16deg) translateY(-26px);
+  }
+}
+
+@keyframes ribbon-sway-3 {
+  0%,
+  100% {
+    transform: rotate(-11deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(-9deg) translateY(20px);
+  }
+}
+
+/* ===================================
    Custom Cursor
    =================================== */
 :root {
@@ -786,26 +856,491 @@ body.modal-open {
 }
 
 /* ===========================
-   TECH SHOWCASE SECTION - CAROUSEL
+   PLATFORMS & SOLUTIONS SECTION
    =========================== */
-.tech-showcase-section {
-  background: $color-white;
+.platforms-section {
+  background: linear-gradient(180deg, #f8fbfe 0%, #e8f4fb 50%, #f0f7fd 100%);
   position: relative;
   overflow: hidden;
   min-height: 100vh;
-  height: 100vh;
-  padding: 0;
+  padding: 80px 0 120px;
+
+  // Aurora Background
+  .aurora-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .fluid-ribbons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ribbon-1 {
+    transform-origin: 720px 450px;
+    transform-box: fill-box;
+    animation: ribbon-sway-1 22s ease-in-out infinite;
+  }
+
+  .ribbon-2 {
+    transform-origin: 720px 450px;
+    transform-box: fill-box;
+    animation: ribbon-sway-2 28s ease-in-out infinite;
+  }
+
+  .ribbon-3 {
+    transform-origin: 720px 450px;
+    transform-box: fill-box;
+    animation: ribbon-sway-3 25s ease-in-out infinite;
+  }
+
+  // Section Label
+  .section-label {
+    @include container-padding(80px);
+    padding-top: 0;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 2;
+
+    .label-number,
+    .label-text {
+      color: rgba(50, 80, 120, 0.6);
+    }
+  }
 }
 
-// Tech Showcase Section Label — carousel 위에 absolute로 배치
-.tech-showcase-section .section-label {
+// Filter Tabs
+.platform-filters {
+  @include container-padding(80px);
+  display: flex;
+  gap: 12px;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 24px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(180, 200, 220, 0.3);
+  border-radius: 999px;
+  color: rgba(60, 90, 130, 0.85);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(100, 150, 200, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  &.active {
+    background: $color-white;
+    border-color: rgba(100, 150, 200, 0.3);
+    color: $color-magic-primary;
+    font-weight: 600;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Swiper Container
+.platform-swiper-container {
+  position: relative;
+  @include container-padding(80px);
+  padding-top: 0;
+  padding-bottom: 0;
+  z-index: 1;
+}
+
+.platform-swiper {
+  overflow: visible;
+  padding: 40px 0;
+
+  .swiper-wrapper {
+    align-items: center;
+  }
+
+  .swiper-slide {
+    width: auto;
+    max-width: 450px;
+    height: auto;
+    transform: scale(0.9);
+    transition: all 0.5s ease;
+
+    &.swiper-slide-active {
+      opacity: 1;
+      transform: scale(1);
+      z-index: 2;
+    }
+
+    &.swiper-slide-next,
+    &.swiper-slide-prev {
+      opacity: 0.8;
+      transform: scale(0.95);
+    }
+
+    &.hidden {
+      display: none;
+    }
+
+    // 색상 패턴 (3개씩 반복)
+    // 1번째, 4번째, 7번째... (파란색)
+    &:nth-child(3n + 1) {
+      .platform-card {
+        background: rgba(0, 118, 255, 0.84);
+        border-color: rgba(0, 118, 255, 0.3);
+      }
+
+      .platform-title,
+      .platform-desc,
+      .platform-features li {
+        color: $color-white;
+      }
+
+      .platform-features li::before {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .platform-tags {
+        border-top-color: rgba(255, 255, 255, 0.2);
+
+        .tag {
+          background: rgba(255, 255, 255, 0.15);
+          border-color: rgba(255, 255, 255, 0.3);
+          color: $color-white;
+        }
+      }
+    }
+
+    // 2번째, 5번째, 8번째... (검정)
+    &:nth-child(3n + 2) {
+      .platform-card {
+        background: rgba(39, 37, 39, 0.84);
+        border-color: rgba(39, 37, 39, 0.5);
+      }
+
+      .platform-title,
+      .platform-desc,
+      .platform-features li {
+        color: $color-white;
+      }
+
+      .platform-features li::before {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .platform-tags {
+        border-top-color: rgba(255, 255, 255, 0.2);
+
+        .tag {
+          background: rgba(255, 255, 255, 0.15);
+          border-color: rgba(255, 255, 255, 0.3);
+          color: $color-white;
+        }
+      }
+    }
+
+    // 3번째, 6번째, 9번째... (밝은 회색)
+    &:nth-child(3n + 3) {
+      .platform-card {
+        background: rgba(242, 242, 242, 0.84);
+        border-color: rgba(200, 200, 200, 0.5);
+      }
+
+      .platform-title,
+      .platform-desc,
+      .platform-features li {
+        color: $color-black;
+      }
+
+      .platform-features li::before {
+        color: $color-magic-primary;
+      }
+
+      .platform-tags {
+        border-top-color: rgba(0, 0, 0, 0.1);
+
+        .tag {
+          background: rgba(0, 0, 0, 0.08);
+          border-color: rgba(0, 0, 0, 0.15);
+          color: $color-black;
+        }
+      }
+    }
+  }
+}
+
+// Navigation Buttons
+.platform-prev,
+.platform-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  background: $color-white;
+  border: 1px solid $color-border;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: $color-black;
+
+  &:hover {
+    background: $color-black;
+    border-color: $color-black;
+    color: $color-white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.platform-prev {
+  left: 80px;
+}
+
+.platform-next {
+  right: 80px;
+}
+
+// Platform Carousel - 이전 스타일 제거
+.platform-carousel {
+  display: none;
+}
+
+// Platform Card
+.platform-card {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  min-height: 520px;
+  border-radius: 16px;
+  background: $color-white;
+  border: 1px solid $color-border;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.16);
+    transform: translateY(-4px);
+  }
+}
+
+.platform-icon {
+  font-size: 56px;
+  line-height: 1;
+  margin-bottom: 24px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+.platform-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.platform-title {
+  font-family: $font-display;
+  font-size: 28px;
+  font-weight: 700;
+  color: $color-black;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.platform-desc {
+  font-size: 16px;
+  color: $color-gray;
+  line-height: 1.6;
+  margin: 0;
+  word-break: keep-all;
+}
+
+.platform-features {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  li {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    padding-left: 20px;
+    position: relative;
+
+    &::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: $color-magic-primary;
+      font-weight: 600;
+    }
+  }
+}
+
+.platform-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+  .tag {
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid $color-border;
+    border-radius: 20px;
+    color: $color-gray;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+}
+
+// 반응형
+@media (max-width: 968px) {
+  .platforms-section {
+    padding: 60px 0 80px;
+  }
+
+  .platforms-section .section-label {
+    @include container-padding(40px);
+    margin-bottom: 40px;
+  }
+
+  .platform-filters {
+    @include container-padding(40px);
+    margin-bottom: 40px;
+  }
+
+  .platform-swiper-container {
+    @include container-padding(40px);
+  }
+
+  .platform-prev {
+    left: 40px;
+  }
+
+  .platform-next {
+    right: 40px;
+  }
+
+  .platform-card {
+    padding: 32px;
+    max-width: 380px;
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 640px) {
+  .platforms-section {
+    padding: 40px 0 60px;
+  }
+
+  .platforms-section .section-label {
+    @include container-padding(24px);
+    margin-bottom: 30px;
+  }
+
+  .platform-filters {
+    @include container-padding(24px);
+    margin-bottom: 30px;
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .platform-swiper-container {
+    @include container-padding(24px);
+  }
+
+  .platform-prev,
+  .platform-next {
+    width: 40px;
+    height: 40px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .platform-prev {
+    left: 24px;
+  }
+
+  .platform-next {
+    right: 24px;
+  }
+
+  .platform-card {
+    padding: 24px;
+    max-width: 320px;
+    min-height: 450px;
+  }
+
+  .platform-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .platform-title {
+    font-size: 24px;
+  }
+
+  .platform-desc {
+    font-size: 14px;
+  }
+
+  .platform-features li {
+    font-size: 13px;
+  }
+}
+
+/* ===========================
+   TECH SHOWCASE SECTION - CAROUSEL
+   =========================== */
+// ===================================
+// Circular Slider Section
+// ===================================
+.circular-slider-section .section-label {
   @include container-padding(80px);
   padding-top: 60px;
   margin-bottom: 0;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 10;
 
   .label-number,
   .label-text {
@@ -813,174 +1348,561 @@ body.modal-open {
   }
 }
 
-// Carousel Styles — section 전체를 채움
-.showcase-carousel {
+// SVG Mask
+.svg-mask {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+// Circular Slider Container
+// Circular Slider Section (CodePen Style)
+.circular-slider-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
+  background: $color-white;
+  z-index: 1;
+
+  .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Featured Slider
+.featured-slider {
+  position: relative;
+  margin: 0;
+  height: 0;
+  width: 0;
+  /* top: 50%; */
+  /* bottom: 0%; */
+  left: 50%;
+  /* transform: scale(0.75); */
   list-style: none;
   padding: 0;
-  margin: 0;
+  width: 100%;
+  height: 100%;
 
-  .carousel-item {
-    --items: 6;
-    --width: clamp(150px, 30vw, 310px);
-    --height: clamp(200px, 40vw, 400px);
-    --x: calc(var(--active) * 800%);
-    --y: calc(var(--active) * 200%);
-    --rot: calc(var(--active) * 120deg);
-    --opacity: calc(var(--zIndex) / var(--items) * 3 - 2);
+  // @media (max-width: 1200px) {
+  //   transform: scale(0.6) translate(-50%, -50%);
+  // }
 
-    z-index: var(--zIndex);
-    overflow: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 24px;
-    width: var(--width);
-    height: var(--height);
-    margin: calc(var(--height) * -0.5) 0 0 calc(var(--width) * -0.5);
-    border-radius: 8px;
-    background: $color-white;
-    border: 1px solid $color-border;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  // @media (max-width: 768px) {
+  //   transform: scale(0.4) translate(-50%, -50%);
+  // }
+
+  li {
     user-select: none;
-    transform-origin: 0% 100%;
-    pointer-events: all;
-    transform: translate(var(--x), var(--y)) rotate(var(--rot));
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
+    opacity: 0.25;
+
+    &.active {
+      opacity: 1;
+    }
+
+    &:nth-child(1) {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    &:nth-child(2) {
+      transform: translate(-50%, -50%) rotate(-90deg);
+    }
+    &:nth-child(3) {
+      transform: translate(-50%, -50%) rotate(-180deg);
+    }
+    &:nth-child(4) {
+      transform: translate(-50%, -50%) rotate(-270deg);
+    }
+
+    .image {
+      width: 1200px;
+      height: auto;
+      transform: translate(1px, 728px);
+      position: relative;
+
+      img {
+        clip-path: url(#quarterMask);
+        -webkit-clip-path: url(#quarterMask);
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .details {
+        position: absolute;
+        bottom: 80px;
+        left: 100px;
+        width: 400px;
+        text-align: left;
+        color: $color-white;
+        z-index: 10;
+        text-shadow: 0 4px 20px rgba($color-black, 0.8);
+
+        .title {
+          font-size: 48px;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+          line-height: 1;
+          font-family: $font-display;
+        }
+
+        hr.small {
+          width: 50px;
+          height: 2px;
+          background: $color-white;
+          border: none;
+          margin: 20px 0;
+        }
+
+        .roles {
+          font-size: 14px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          opacity: 0.9;
+          margin: 0;
+        }
+      }
+    }
+
+    .detail-content {
+      position: absolute;
+      left: 50%;
+      bottom: 100px;
+      transform: translateX(-50%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.6s ease;
+      text-align: center;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .num {
+        font-size: 80px;
+        font-weight: 700;
+        font-family: $font-display;
+        background: linear-gradient(
+          135deg,
+          $color-magic-primary,
+          $color-magic-secondary
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 20px;
+        line-height: 1;
+
+        @media (max-width: 768px) {
+          font-size: 60px;
+        }
+      }
+
+      .detail-title {
+        font-size: 48px;
+        font-weight: 700;
+        color: $color-black;
+        margin-bottom: 16px;
+
+        @media (max-width: 768px) {
+          font-size: 32px;
+        }
+      }
+
+      .detail-desc {
+        font-size: 18px;
+        color: $color-gray;
+        margin-bottom: 32px;
+
+        @media (max-width: 768px) {
+          font-size: 14px;
+          margin-bottom: 20px;
+        }
+      }
+
+      .detail-features {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+
+        .feature-tag {
+          position: relative;
+          display: block;
+          padding: 8px 12px;
+          background: #fff;
+          border-radius: 25px;
+          font-size: 14px;
+          font-weight: 600;
+          color: $color-magic-primary;
+
+          &::before {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            top: -1.5px;
+            left: -1.5px;
+            width: calc(100% + 3px);
+            height: calc(100% + 3px);
+            background: linear-gradient(
+              110deg,
+              $color-magic-secondary 0%,
+              $color-magic-primary 100%
+            );
+            border-radius: 25px;
+          }
+
+          @media (max-width: 768px) {
+          }
+        }
+      }
+    }
+  }
+
+  // Navigation
+  nav {
+    .prev,
+    .next,
+    .nav-prev,
+    .nav-next {
+      // 레거시 스타일 초기화 (featured-slider-btn-area로 대체)
+      all: unset;
+    }
+  }
+}
+
+// ===================================
+// Circular Slider — 원형 아이콘 버튼
+// ===================================
+.featured-slider-btn-area {
+  z-index: 20;
+  position: absolute;
+  top: 125px;
+  left: 50%;
+  width: 680px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+
+  .prev,
+  .next,
+  .nav-prev,
+  .nav-next {
+    pointer-events: all; // 버튼만 클릭 허용
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid $color-gray;
+    background: transparent;
+    color: $color-gray;
+    cursor: pointer;
     transition:
-      transform 0.8s cubic-bezier(0, 0.02, 0, 1),
-      box-shadow 0.3s ease,
-      opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
-    opacity: var(--opacity);
+      background 0.25s ease,
+      color 0.25s ease,
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+
+    svg {
+      display: block;
+      flex-shrink: 0;
+    }
 
     &:hover {
-      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.16);
+      background: $color-gray;
+      color: $color-white;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+      transform: scale(0.93);
+    }
+  }
+}
+
+// Center Details Overlay (wheel 바깥 — 회전 영향 없음)
+.center-details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 560px;
+  z-index: 10;
+  pointer-events: none;
+
+  .detail-content {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s ease;
+    text-align: center;
+    pointer-events: auto;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
     }
 
     .num {
-      color: $color-gray;
-      font-size: clamp(48px, 8vw, 72px);
-      font-weight: 300;
+      font-size: 80px;
+      font-weight: 700;
       font-family: $font-display;
-      opacity: 0.3;
+      background: linear-gradient(
+        135deg,
+        $color-magic-primary,
+        $color-magic-secondary
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+      line-height: 1;
+
+      @media (max-width: 768px) {
+        font-size: 60px;
+      }
+    }
+
+    .detail-title {
+      font-size: 48px;
+      font-weight: 700;
+      color: $color-black;
+      margin-bottom: 16px;
+
+      @media (max-width: 768px) {
+        font-size: 32px;
+      }
+    }
+
+    .detail-desc {
+      font-size: 18px;
+      color: $color-gray;
+      margin-bottom: 32px;
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .detail-features {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+
+      .feature-tag {
+        position: relative;
+        display: block;
+        padding: 8px 12px;
+        background: #fff;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 600;
+        color: $color-magic-primary;
+
+        &::before {
+          content: "";
+          z-index: -1;
+          position: absolute;
+          top: -1.5px;
+          left: -1.5px;
+          width: calc(100% + 3px);
+          height: calc(100% + 3px);
+          background: linear-gradient(
+            110deg,
+            $color-magic-secondary 0%,
+            $color-magic-primary 100%
+          );
+          border-radius: 25px;
+        }
+      }
+    }
+  }
+}
+
+// Navigation
+.circular-nav {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 24px;
+  z-index: 20;
+
+  .nav-btn {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: $color-white;
+    border: 2px solid $color-border;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background: $color-black;
+      border-color: $color-black;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
+
+      svg {
+        stroke: $color-white;
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    svg {
+      stroke: $color-black;
+      transition: stroke 0.3s ease;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 1024px) {
+  .circular-wheel {
+    transform: scale(0.5) translateY(-50px);
+  }
+
+  .wheel-item .wheel-image {
+    width: 1000px;
+    height: 500px;
+  }
+
+  .wheel-item .wheel-content {
+    width: 320px;
+    bottom: 100px;
+    left: 100px;
+
+    .num {
+      font-size: 64px;
     }
 
     .title {
-      color: $color-black;
-      font-size: clamp(18px, 2.5vw, 24px);
-      font-weight: 500;
-      letter-spacing: -0.01em;
+      font-size: 28px;
     }
 
     .description {
-      color: $color-gray;
-      font-size: clamp(13px, 1.8vw, 15px);
-      margin-top: 8px;
+      font-size: 15px;
+    }
+
+    .features .feature-tag {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+  }
+
+  .center-details {
+    width: 400px;
+
+    .detail-content {
+      .detail-title {
+        font-size: 42px;
+      }
+
+      .detail-desc {
+        font-size: 16px;
+      }
     }
   }
 }
 
-.features {
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: auto;
-  padding-top: 16px;
-  display: flex;
+@media (max-width: 768px) {
+  .circular-wheel {
+    transform: scale(0.35) translateY(-80px);
+  }
 
-  .feature-item {
-    position: relative;
-    padding: 4px 12px;
-    background: $color-white;
-    border-radius: 999px;
-    color: $color-magic-accent;
-    font-size: clamp(10px, 1.4vw, 12px);
-    font-weight: 500;
-    white-space: nowrap;
+  .wheel-item .wheel-image {
+    width: 900px;
+    height: 450px;
+  }
 
-    &::before {
-      content: "";
-      z-index: -1;
-      position: absolute;
-      left: -2px;
-      top: -2px;
-      display: block;
-      width: calc(100% + 4px);
-      height: calc(100% + 4px);
-      background: linear-gradient(
-        135deg,
-        lighten($color-magic-secondary, 5%) 0%,
-        lighten($color-magic-primary, 5%) 100%
-      );
-      border-radius: 999px;
+  .wheel-item .wheel-content {
+    width: 280px;
+    bottom: 80px;
+    left: 80px;
+
+    .num {
+      font-size: 52px;
+    }
+
+    .title {
+      font-size: 24px;
+    }
+
+    .description {
+      font-size: 13px;
+    }
+
+    .features .feature-tag {
+      font-size: 11px;
+      padding: 5px 10px;
     }
   }
-}
 
+  .center-details {
+    width: 320px;
 
-.showcase-hint {
-  text-align: center;
-  margin-top: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+    .detail-content {
+      .detail-title {
+        font-size: 32px;
+      }
 
-  .divider {
-    width: 1px;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.2);
+      .detail-desc {
+        font-size: 14px;
+      }
+    }
   }
-}
 
-// Custom Cursor for Carousel (추후 JS로 제어)
-.carousel-cursor {
-  position: fixed;
-  z-index: 10000;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  margin: -20px 0 0 -20px;
-  transition: transform 0.85s cubic-bezier(0, 0.02, 0, 1);
-  display: none;
-  pointer-events: none;
+  .circular-nav {
+    bottom: 60px;
 
-  @media (pointer: fine) {
-    display: block;
-  }
-}
+    .nav-btn {
+      width: 52px;
+      height: 52px;
 
-.carousel-cursor-dot {
-  width: 4px;
-  height: 4px;
-  position: fixed;
-  z-index: 10000;
-  top: 0;
-  left: 0;
-  margin: -2px 0 0 -2px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  transition: transform 0.7s cubic-bezier(0, 0.02, 0, 1);
-  pointer-events: none;
-
-  @media (pointer: fine) {
-    display: block;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 }
 
@@ -1800,6 +2722,44 @@ canvas {
   min-height: 400vh;
   background: $color-white;
   position: relative;
+  overflow: hidden;
+}
+
+/* ===================================
+   Blurred Gradient Circles
+   =================================== */
+.cir {
+  position: absolute;
+  aspect-ratio: 1/1;
+  background: linear-gradient(-39deg, #017dc5 0%, #003fcd 100%);
+  border-radius: 1000px;
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 1;
+  animation: opacityPulse 4s ease-in-out infinite;
+}
+
+@keyframes opacityPulse {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.cir1 {
+  width: clamp(200px, 25vw, 400px);
+  top: 10%;
+  right: 5%;
+}
+
+.cir2 {
+  width: clamp(300px, 35vw, 500px);
+  bottom: 20%;
+  left: 8%;
+  animation-delay: 2s;
 }
 
 .sequence-container {
@@ -1808,6 +2768,7 @@ canvas {
   height: 100vh;
   @include flex-center;
   overflow: hidden;
+  z-index: 2;
 }
 
 /* ===================================
