@@ -31,7 +31,8 @@
     </div>
 
     <!-- Preloader -->
-    <div class="preloader">
+    <!-- Preloader (임시 비활성화) -->
+    <div class="preloader" style="display: none;">
       <div class="preloader-inner">
         <div class="preloader-word">PORTFOLIO</div>
       </div>
@@ -56,19 +57,11 @@
     <!-- Hero Section -->
     <section class="hero-section" data-section="home">
       <div class="container-large">
-        <div class="hero-label">Creative Developer & Designer</div>
         <h1 class="hero-title">
-          <span class="line">
-            <span class="word">Crafting Digital</span>
-          </span>
-          <span class="line">
-            <span class="word">Experiences</span>
-          </span>
+          Precise Markup & Vivid Motion,<br />
+          Crafting Exceptional Web Experiences
         </h1>
-        <p class="hero-subtitle">
-          디지털 경험을 디자인하고<br />
-          코드로 실현합니다
-        </p>
+
         <div class="hero-scroll">
           <span>Scroll</span>
           <div class="scroll-line"></div>
@@ -76,183 +69,473 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section" data-section="about">
+    <!-- About Section - Code Block Style -->
+    <section class="about-section about-code-block" data-section="about">
       <div class="container-large">
         <div class="section-label">
           <span class="label-number">01</span>
           <span class="label-text">About</span>
         </div>
-        <div class="about-content">
-          <div>
-            <h2 class="about-title">
-              디자인을 코드로<br />구현하는 퍼블리셔입니다
-            </h2>
-            <p class="about-description">
-              GSAP 애니메이션과 반응형 퍼블리싱으로 인터랙티브한 웹을 만듭니다.
-              신규 구축부터 사이트 운영까지, 다양한 프로젝트 경험을 보유하고
-              있습니다.
-            </p>
-          </div>
-          <div class="about-stats">
-            <div class="stat-item">
-              <div class="stat-number" data-count="50">0</div>
-              <div class="stat-label">Projects Completed</div>
+
+        <div class="code-block-wrapper">
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="code-title">publisher.js</span>
             </div>
-            <div class="stat-item">
-              <div class="stat-number" data-count="4">0</div>
-              <div class="stat-label">Years of Experience</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-count="30">0</div>
-              <div class="stat-label">Happy Clients</div>
+            <div class="code-content">
+              <pre><code><span class="code-keyword">const</span> <span class="code-variable">publisher</span> = {
+  <span class="code-property">name</span>: <span class="code-string">"이화진"</span>,
+  <span class="code-property">role</span>: <span class="code-string">"Publisher"</span>,
+  <span class="code-property">experience</span>: <span class="code-string">"4+"</span>,
+  
+  <span class="code-property">skills</span>: [
+    <span class="code-string">"HTML"</span>, <span class="code-string">"CSS/SCSS"</span>, <span class="code-string">"JavaScript"</span>,
+    <span class="code-string">"Vue"</span>, <span class="code-string">"GSAP"</span>, <span class="code-string">"Ajax"</span>
+  ],
+  
+  <span class="code-property">specialty</span>: {
+    <span class="code-property">design</span>: <span class="code-string">"Pixel Perfect Implementation"</span>,
+    <span class="code-property">animation</span>: <span class="code-string">"Smooth & Natural Motion"</span>,
+    <span class="code-property">layout</span>: <span class="code-string">"Responsive & Adaptive"</span>
+  },
+  
+  <span class="code-property">stats</span>: {
+    <span class="code-property">responsive</span>: <span class="code-keyword">true</span>,
+    <span class="code-property">animation</span>: <span class="code-string">"GSAP"</span>,
+    <span class="code-property">framework</span>: <span class="code-string">"Vue.js"</span>
+  },
+  
+  <span class="code-property">getIntroduction</span>: <span class="code-keyword">() =></span> 
+    <span class="code-template">`코드로 디자인에 생명을 불어넣고,
+     인터랙션으로 경험을 완성합니다.`</span>
+};
+
+<span class="code-comment">// 코드로 표현하는 퍼블리셔의 세계</span></code></pre>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Expertise Section - Interactive Skills Canvas -->
-    <section class="expertise-section" data-section="expertise">
+    <!-- About Section Alternative A: Interactive Timeline -->
+    <section class="about-section about-timeline" data-section="about-timeline">
       <div class="container-large">
+        <div class="section-label">
+          <span class="label-number">01</span>
+          <span class="label-text">About - Timeline</span>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-intro">
+            <h2 class="timeline-title">이화진</h2>
+            <p class="timeline-subtitle">웹 퍼블리셔 / 프론트엔드 개발자</p>
+            <p class="timeline-description">
+              코드로 디자인에 생명을 불어넣고,<br>
+              인터랙션으로 경험을 완성합니다.
+            </p>
+          </div>
+
+          <div class="timeline-line"></div>
+
+          <div class="timeline-items">
+            <div class="timeline-item" data-year="2020">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2020</span>
+                <h3>퍼블리셔 커리어 시작</h3>
+                <p>HTML, CSS, JavaScript 기반의<br>웹 퍼블리싱 시작</p>
+                <div class="timeline-tags">
+                  <span class="tag">HTML5</span>
+                  <span class="tag">CSS3</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-year="2021">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2021</span>
+                <h3>프레임워크 확장</h3>
+                <p>Vue.js와 SCSS를 활용한<br>대규모 프로젝트 경험</p>
+                <div class="timeline-tags">
+                  <span class="tag">Vue.js</span>
+                  <span class="tag">SCSS</span>
+                  <span class="tag">Quasar</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-year="2022">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2022</span>
+                <h3>애니메이션 전문화</h3>
+                <p>GSAP, ScrollTrigger를 활용한<br>인터랙티브 웹 구현</p>
+                <div class="timeline-tags">
+                  <span class="tag">GSAP</span>
+                  <span class="tag">ScrollTrigger</span>
+                  <span class="tag">Canvas</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-year="2024">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2024</span>
+                <h3>현재</h3>
+                <p>픽셀 퍼펙트한 디자인 구현과<br>자연스러운 모션으로 사용자 경험 완성</p>
+                <div class="timeline-tags">
+                  <span class="tag">Responsive</span>
+                  <span class="tag">Accessibility</span>
+                  <span class="tag">Performance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise Alternative 1: Glassmorphism + 3D Floating Cards -->
+    <section
+      class="expertise-section expertise-glass-3d"
+      data-section="glass3d"
+    >
+      <div class="container-full">
         <div class="section-label">
           <span class="label-number">02</span>
           <span class="label-text">Expertise</span>
         </div>
 
-        <div class="skills-canvas-wrapper">
-          <div class="tech-cluster">
-            <div class="tech-node tech-node-center" data-tech="Publishing">
-              <div class="tech-icon tech-icon-publishing">
-                <img src="./images/ico_controllers.svg" alt="" />
+        <div class="glass-3d-wrapper">
+          <div class="glass-cards-grid" id="glassCardsGrid">
+            <!-- Card 1: HTML5 -->
+            <div class="glass-card" data-tilt>
+              <div class="glass-card-inner">
+                <div class="glass-card-front">
+                  <div class="glass-icon">📄</div>
+                  <h4 class="glass-skill-name">HTML5</h4>
+                  <div class="glass-glow"></div>
+                </div>
+                <div class="glass-card-back">
+                  <div class="glass-back-content">
+                    <div class="glass-back-header">
+                      <span class="glass-back-icon">🎯</span>
+                      <h4>HTML5</h4>
+                    </div>
+                    <div class="glass-level-badge">Expert - 100%</div>
+                    <ul class="glass-features">
+                      <li>시맨틱 마크업</li>
+                      <li>접근성 준수</li>
+                      <li>SEO</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div class="tech-tooltip">HTML5 · Semantic Markup</div>
             </div>
 
-            <div class="tech-node tech-node-1" data-tech="Vue.js">
-              <div class="tech-icon tech-icon-vue">
-                <img src="./images/ico_vue.svg" alt="vue" />
+            <!-- Card 2: CSS/SCSS -->
+            <div class="glass-card" data-tilt>
+              <div class="glass-card-inner">
+                <div class="glass-card-front">
+                  <div class="glass-icon">🎨</div>
+                  <h4 class="glass-skill-name">CSS/SCSS</h4>
+                  <div class="glass-glow"></div>
+                </div>
+                <div class="glass-card-back">
+                  <div class="glass-back-content">
+                    <div class="glass-back-header">
+                      <span class="glass-back-icon">🎨</span>
+                      <h4>CSS/SCSS</h4>
+                    </div>
+                    <div class="glass-level-badge">Expert - 100%</div>
+                    <ul class="glass-features">
+                      <li>반응형 레이아웃</li>
+                      <li>SCSS 활용</li>
+                      <li>Animation</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div class="tech-tooltip">Vue 3 · Vue 2 · Quasar</div>
             </div>
 
-            <div class="tech-node tech-node-2" data-tech="CSS">
-              <div class="tech-icon tech-icon-css">
-                <img src="./images/ico_css.svg" alt="css" />
+            <!-- Card 3: JavaScript -->
+            <div class="glass-card" data-tilt>
+              <div class="glass-card-inner">
+                <div class="glass-card-front">
+                  <div class="glass-icon">⚡</div>
+                  <h4 class="glass-skill-name">JavaScript</h4>
+                  <div class="glass-glow"></div>
+                </div>
+                <div class="glass-card-back">
+                  <div class="glass-back-content">
+                    <div class="glass-back-header">
+                      <span class="glass-back-icon">⚡</span>
+                      <h4>JavaScript</h4>
+                    </div>
+                    <div class="glass-level-badge">Advanced - 85%</div>
+                    <ul class="glass-features">
+                      <li>ES6+ 문법</li>
+                      <li>DOM 조작</li>
+                      <li>이벤트 처리</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div class="tech-tooltip">SCSS · Animation</div>
             </div>
 
-            <div class="tech-node tech-node-3" data-tech="GSAP">
-              <div class="tech-icon tech-icon-gsap">
-                <img src="./images/ico_animations.svg" alt="animations" />
+            <!-- Card 4: Vue.js -->
+            <div class="glass-card" data-tilt>
+              <div class="glass-card-inner">
+                <div class="glass-card-front">
+                  <div class="glass-icon">💚</div>
+                  <h4 class="glass-skill-name">Vue.js</h4>
+                  <div class="glass-glow"></div>
+                </div>
+                <div class="glass-card-back">
+                  <div class="glass-back-content">
+                    <div class="glass-back-header">
+                      <span class="glass-back-icon">💚</span>
+                      <h4>Vue.js</h4>
+                    </div>
+                    <div class="glass-level-badge">Advanced - 80%</div>
+                    <ul class="glass-features">
+                      <li>Vue 3 Composition</li>
+                      <li>Quasar 프레임워크</li>
+                      <li>컴포넌트 설계</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div class="tech-tooltip">ScrollTrigger · Timeline</div>
             </div>
 
-            <!-- JavaScript Logo -->
-            <div class="tech-node tech-node-4" data-tech="JavaScript">
-              <div class="tech-icon tech-icon-js">
-                <img src="./images/ico_js.svg" alt="js" />
+            <!-- Card 5: GSAP -->
+            <div class="glass-card" data-tilt>
+              <div class="glass-card-inner">
+                <div class="glass-card-front">
+                  <div class="glass-icon">🎬</div>
+                  <h4 class="glass-skill-name">GSAP</h4>
+                  <div class="glass-glow"></div>
+                </div>
+                <div class="glass-card-back">
+                  <div class="glass-back-content">
+                    <div class="glass-back-header">
+                      <span class="glass-back-icon">🎬</span>
+                      <h4>GSAP</h4>
+                    </div>
+                    <div class="glass-level-badge">Expert - 80%</div>
+                    <ul class="glass-features">
+                      <li>ScrollTrigger</li>
+                      <li>Timeline</li>
+                      <li>Smooth Animation</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div class="tech-tooltip">ES6 · DOM API</div>
             </div>
 
-            <!-- Connection Lines -->
-            <svg class="connection-lines">
-              <line
-                class="connection-line"
-                x1="50%"
-                y1="50%"
-                x2="25%"
-                y2="20%"
-              />
-              <line
-                class="connection-line"
-                x1="50%"
-                y1="50%"
-                x2="75%"
-                y2="80%"
-              />
-              <line
-                class="connection-line"
-                x1="50%"
-                y1="50%"
-                x2="90%"
-                y2="50%"
-              />
-              <line
-                class="connection-line"
-                x1="50%"
-                y1="50%"
-                x2="10%"
-                y2="75%"
-              />
-            </svg>
+            <!-- Card 6: Responsive -->
+            <div class="glass-card" data-tilt>
+              <div class="glass-card-inner">
+                <div class="glass-card-front">
+                  <div class="glass-icon">📱</div>
+                  <h4 class="glass-skill-name">Responsive</h4>
+                  <div class="glass-glow"></div>
+                </div>
+                <div class="glass-card-back">
+                  <div class="glass-back-content">
+                    <div class="glass-back-header">
+                      <span class="glass-back-icon">📱</span>
+                      <h4>Responsive</h4>
+                    </div>
+                    <div class="glass-level-badge">Expert - 100%</div>
+                    <ul class="glass-features">
+                      <li>Mobile First</li>
+                      <li>Flexible Grid</li>
+                      <li>Media Queries</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <!-- Interaction Hint -->
-            <div class="interaction-hint">
-              <span class="hint-icon">→</span>
-              <span>Hover to interact</span>
+            <!-- Card 7: Git/버전관리 -->
+            <div class="glass-card" data-tilt>
+              <div class="glass-card-inner">
+                <div class="glass-card-front">
+                  <div class="glass-icon">🔧</div>
+                  <h4 class="glass-skill-name">Git</h4>
+                  <div class="glass-glow"></div>
+                </div>
+                <div class="glass-card-back">
+                  <div class="glass-back-content">
+                    <div class="glass-back-header">
+                      <span class="glass-back-icon">🔧</span>
+                      <h4>Git/버전관리</h4>
+                    </div>
+                    <div class="glass-level-badge">Advanced - 85%</div>
+                    <ul class="glass-features">
+                      <li>Git / GitHub</li>
+                      <li>브랜치 전략</li>
+                      <li>협업 워크플로우</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 8: Figma/디자인툴 -->
+            <div class="glass-card" data-tilt>
+              <div class="glass-card-inner">
+                <div class="glass-card-front">
+                  <div class="glass-icon">🎯</div>
+                  <h4 class="glass-skill-name">Figma</h4>
+                  <div class="glass-glow"></div>
+                </div>
+                <div class="glass-card-back">
+                  <div class="glass-back-content">
+                    <div class="glass-back-header">
+                      <span class="glass-back-icon">🎯</span>
+                      <h4>Figma/디자인툴</h4>
+                    </div>
+                    <div class="glass-level-badge">Advanced - 100%</div>
+                    <ul class="glass-features">
+                      <li>Figma / Zeplin</li>
+                      <li>디자인 시스템</li>
+                      <li>디자인 협업</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 9: React Native -->
+            <div class="glass-card" data-tilt>
+              <div class="glass-card-inner">
+                <div class="glass-card-front">
+                  <div class="glass-icon">📱</div>
+                  <h4 class="glass-skill-name">React Native</h4>
+                  <div class="glass-glow"></div>
+                </div>
+                <div class="glass-card-back">
+                  <div class="glass-back-content">
+                    <div class="glass-back-header">
+                      <span class="glass-back-icon">📱</span>
+                      <h4>React Native</h4>
+                    </div>
+                    <div class="glass-level-badge">Intermediate - 70%</div>
+                    <ul class="glass-features">
+                      <li>크로스플랫폼 앱</li>
+                      <li>컴포넌트 퍼블리싱</li>
+                      <li>iOS/Android 대응</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <!-- Right: Skills Progress -->
-          <div class="skills-progress-container">
-            <h3 class="skills-title">
-              Bridging <span class="highlight">Motion</span> & Development
-            </h3>
+        <!-- Aurora Background (Same as Platforms Section) -->
+        <div class="aurora-bg" aria-hidden="true">
+          <svg
+            class="fluid-ribbons"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 900"
+            preserveAspectRatio="xMidYMid slice"
+          >
+            <defs>
+              <filter id="expertise-blur-sm">
+                <feGaussianBlur stdDeviation="16" />
+              </filter>
+              <filter id="expertise-blur-md">
+                <feGaussianBlur stdDeviation="24" />
+              </filter>
+              <filter id="expertise-blur-lg">
+                <feGaussianBlur stdDeviation="34" />
+              </filter>
 
-            <div class="skills-list">
-              <!-- Skill 1 -->
-              <div class="skill-item">
-                <div class="skill-header">
-                  <h4 class="skill-name">GSAP Animation</h4>
+              <linearGradient id="eg1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="white" stop-opacity="0" />
+                <stop offset="18%" stop-color="white" stop-opacity="0.72" />
+                <stop offset="48%" stop-color="#d4f2ff" stop-opacity="0.68" />
+                <stop offset="78%" stop-color="white" stop-opacity="0.62" />
+                <stop offset="100%" stop-color="white" stop-opacity="0" />
+              </linearGradient>
 
-                  <span class="skill-percentage" data-target="80">0%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" data-progress="80"></div>
-                </div>
-              </div>
+              <linearGradient id="eg2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#6dcfee" stop-opacity="0" />
+                <stop offset="22%" stop-color="#8de0ff" stop-opacity="0.52" />
+                <stop offset="52%" stop-color="#b8eeff" stop-opacity="0.58" />
+                <stop offset="80%" stop-color="#8de0ff" stop-opacity="0.42" />
+                <stop offset="100%" stop-color="#6dcfee" stop-opacity="0" />
+              </linearGradient>
 
-              <!-- Skill 2 -->
-              <div class="skill-item">
-                <div class="skill-header">
-                  <h4 class="skill-name">CSS / SCSS</h4>
+              <linearGradient id="eg3" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="white" stop-opacity="0" />
+                <stop offset="28%" stop-color="white" stop-opacity="0.55" />
+                <stop offset="58%" stop-color="#c8ebff" stop-opacity="0.58" />
+                <stop offset="85%" stop-color="white" stop-opacity="0.42" />
+                <stop offset="100%" stop-color="white" stop-opacity="0" />
+              </linearGradient>
 
-                  <span class="skill-percentage" data-target="100">0%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" data-progress="100"></div>
-                </div>
-              </div>
+              <radialGradient id="eg4" cx="88%" cy="12%" r="38%">
+                <stop offset="0%" stop-color="#c0e6fa" stop-opacity="0.58" />
+                <stop offset="100%" stop-color="#c0e6fa" stop-opacity="0" />
+              </radialGradient>
 
-              <!-- Skill 3 -->
-              <div class="skill-item">
-                <div class="skill-header">
-                  <h4 class="skill-name">Vue.js Development</h4>
+              <radialGradient id="eg5" cx="8%" cy="90%" r="32%">
+                <stop offset="0%" stop-color="#a8dcf8" stop-opacity="0.45" />
+                <stop offset="100%" stop-color="#a8dcf8" stop-opacity="0" />
+              </radialGradient>
+            </defs>
 
-                  <span class="skill-percentage" data-target="80">0%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" data-progress="80"></div>
-                </div>
-              </div>
+            <rect width="1440" height="900" fill="url(#eg4)" />
+            <rect width="1440" height="900" fill="url(#eg5)" />
 
-              <!-- Skill 4 -->
-              <div class="skill-item">
-                <div class="skill-header">
-                  <h4 class="skill-name">Publishing</h4>
+            <rect
+              class="ribbon ribbon-1"
+              x="-200"
+              y="60"
+              width="1840"
+              height="210"
+              rx="105"
+              fill="url(#eg1)"
+              filter="url(#expertise-blur-sm)"
+              transform="rotate(-22, 720, 450)"
+            />
 
-                  <span class="skill-percentage" data-target="100">0%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" data-progress="100"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+            <rect
+              class="ribbon ribbon-2"
+              x="-200"
+              y="360"
+              width="1840"
+              height="195"
+              rx="97"
+              fill="url(#eg2)"
+              filter="url(#expertise-blur-md)"
+              transform="rotate(14, 720, 450)"
+            />
+
+            <rect
+              class="ribbon ribbon-3"
+              x="-200"
+              y="640"
+              width="1840"
+              height="175"
+              rx="87"
+              fill="url(#eg3)"
+              filter="url(#expertise-blur-sm)"
+              transform="rotate(-11, 720, 450)"
+            />
+          </svg>
         </div>
       </div>
     </section>
@@ -378,317 +661,6 @@
             stroke-linejoin="round"
           >
             <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-      </div>
-    </section>
-
-    <!-- Platforms & Solutions Section -->
-    <section class="platforms-section" data-section="platforms">
-      <!-- Aurora Background -->
-      <div class="aurora-bg" aria-hidden="true">
-        <svg
-          class="fluid-ribbons"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 900"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <defs>
-            <filter id="platform-blur-sm">
-              <feGaussianBlur stdDeviation="16" />
-            </filter>
-            <filter id="platform-blur-md">
-              <feGaussianBlur stdDeviation="24" />
-            </filter>
-            <filter id="platform-blur-lg">
-              <feGaussianBlur stdDeviation="34" />
-            </filter>
-
-            <linearGradient id="pg1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="white" stop-opacity="0" />
-              <stop offset="18%" stop-color="white" stop-opacity="0.72" />
-              <stop offset="48%" stop-color="#d4f2ff" stop-opacity="0.68" />
-              <stop offset="78%" stop-color="white" stop-opacity="0.62" />
-              <stop offset="100%" stop-color="white" stop-opacity="0" />
-            </linearGradient>
-
-            <linearGradient id="pg2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#6dcfee" stop-opacity="0" />
-              <stop offset="22%" stop-color="#8de0ff" stop-opacity="0.52" />
-              <stop offset="52%" stop-color="#b8eeff" stop-opacity="0.58" />
-              <stop offset="80%" stop-color="#8de0ff" stop-opacity="0.42" />
-              <stop offset="100%" stop-color="#6dcfee" stop-opacity="0" />
-            </linearGradient>
-
-            <linearGradient id="pg3" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="white" stop-opacity="0" />
-              <stop offset="28%" stop-color="white" stop-opacity="0.55" />
-              <stop offset="58%" stop-color="#c8ebff" stop-opacity="0.58" />
-              <stop offset="85%" stop-color="white" stop-opacity="0.42" />
-              <stop offset="100%" stop-color="white" stop-opacity="0" />
-            </linearGradient>
-
-            <radialGradient id="pg4" cx="88%" cy="12%" r="38%">
-              <stop offset="0%" stop-color="#c0e6fa" stop-opacity="0.58" />
-              <stop offset="100%" stop-color="#c0e6fa" stop-opacity="0" />
-            </radialGradient>
-
-            <radialGradient id="pg5" cx="8%" cy="90%" r="32%">
-              <stop offset="0%" stop-color="#a8dcf8" stop-opacity="0.45" />
-              <stop offset="100%" stop-color="#a8dcf8" stop-opacity="0" />
-            </radialGradient>
-          </defs>
-
-          <rect width="1440" height="900" fill="url(#pg4)" />
-          <rect width="1440" height="900" fill="url(#pg5)" />
-
-          <rect
-            class="ribbon ribbon-1"
-            x="-200"
-            y="60"
-            width="1840"
-            height="210"
-            rx="105"
-            fill="url(#pg1)"
-            filter="url(#platform-blur-sm)"
-            transform="rotate(-22, 720, 450)"
-          />
-
-          <rect
-            class="ribbon ribbon-2"
-            x="-200"
-            y="360"
-            width="1840"
-            height="195"
-            rx="97"
-            fill="url(#pg2)"
-            filter="url(#platform-blur-md)"
-            transform="rotate(14, 720, 450)"
-          />
-
-          <rect
-            class="ribbon ribbon-3"
-            x="-200"
-            y="640"
-            width="1840"
-            height="175"
-            rx="87"
-            fill="url(#pg3)"
-            filter="url(#platform-blur-sm)"
-            transform="rotate(-11, 720, 450)"
-          />
-        </svg>
-      </div>
-
-      <div class="section-label">
-        <span class="label-number">04</span>
-        <span class="label-text">Platforms & Solutions</span>
-      </div>
-
-      <!-- Filter Tabs -->
-      <div class="platform-filters">
-        <button class="filter-btn active" data-filter="all">ALL</button>
-        <button class="filter-btn" data-filter="ecommerce">쇼핑몰</button>
-        <button class="filter-btn" data-filter="web">반응형 WEB</button>
-        <button class="filter-btn" data-filter="framework">프레임워크</button>
-      </div>
-
-      <!-- Swiper Container -->
-      <div class="platform-swiper-container">
-        <!-- Navigation Buttons -->
-        <button class="swiper-button-prev platform-prev">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-
-        <div class="swiper platform-swiper">
-          <div class="swiper-wrapper">
-            <!-- 쇼핑몰 플랫폼 -->
-            <div class="swiper-slide" data-category="ecommerce">
-              <div class="platform-card">
-                <div class="platform-icon">🛒</div>
-                <div class="platform-content">
-                  <h3 class="platform-title">고도몰</h3>
-                  <p class="platform-desc">
-                    고도몰 쇼핑몰 스킨 커스터마이징 및 제작
-                  </p>
-                  <ul class="platform-features">
-                    <li>스킨 커스터마이징</li>
-                    <li>디자인 시안 퍼블리싱</li>
-                    <li>반응형 전환</li>
-                  </ul>
-                </div>
-                <div class="platform-tags">
-                  <span class="tag">#HTML</span>
-                  <span class="tag">#CSS</span>
-                  <span class="tag">#jQuery</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide" data-category="ecommerce">
-              <div class="platform-card">
-                <div class="platform-icon">☕</div>
-                <div class="platform-content">
-                  <h3 class="platform-title">카페24</h3>
-                  <p class="platform-desc">카페24 쇼핑몰 템플릿 제작 및 수정</p>
-                  <ul class="platform-features">
-                    <li>스마트디자인 편집</li>
-                    <li>템플릿 커스터마이징</li>
-                    <li>UX/UX 개선</li>
-                  </ul>
-                </div>
-                <div class="platform-tags">
-                  <span class="tag">#HTML</span>
-                  <span class="tag">#CSS</span>
-                  <span class="tag">#JavaScript</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 반응형 웹 -->
-            <div class="swiper-slide" data-category="web">
-              <div class="platform-card">
-                <div class="platform-icon">📱</div>
-                <div class="platform-content">
-                  <h3 class="platform-title">반응형 웹사이트</h3>
-                  <p class="platform-desc">
-                    모든 디바이스 최적화 반응형 퍼블리싱
-                  </p>
-                  <ul class="platform-features">
-                    <li>모바일 최적화</li>
-                    <li>크로스 브라우징</li>
-                    <li>웹 접근성</li>
-                  </ul>
-                </div>
-                <div class="platform-tags">
-                  <span class="tag">#HTML5</span>
-                  <span class="tag">#SCSS</span>
-                  <span class="tag">#Responsive</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide" data-category="web">
-              <div class="platform-card">
-                <div class="platform-icon">🚀</div>
-                <div class="platform-content">
-                  <h3 class="platform-title">랜딩페이지</h3>
-                  <p class="platform-desc">전환율 높은 랜딩페이지 제작</p>
-                  <ul class="platform-features">
-                    <li>빠른 제작</li>
-                    <li>인터랙션 구현</li>
-                    <li>성능 최적화</li>
-                  </ul>
-                </div>
-                <div class="platform-tags">
-                  <span class="tag">#HTML</span>
-                  <span class="tag">#CSS</span>
-                  <span class="tag">#GSAP</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 프레임워크 -->
-            <div class="swiper-slide" data-category="framework">
-              <div class="platform-card">
-                <div class="platform-icon">⚡</div>
-                <div class="platform-content">
-                  <h3 class="platform-title">Vue.js</h3>
-                  <p class="platform-desc">Vue 2/3 기반 SPA 퍼블리싱</p>
-                  <ul class="platform-features">
-                    <li>컴포넌트 구조</li>
-                    <li>상태 관리</li>
-                    <li>Quasar 프레임워크</li>
-                  </ul>
-                </div>
-                <div class="platform-tags">
-                  <span class="tag">#Vue3</span>
-                  <span class="tag">#Quasar</span>
-                  <span class="tag">#SCSS</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide" data-category="framework">
-              <div class="platform-card">
-                <div class="platform-icon">📦</div>
-                <div class="platform-content">
-                  <h3 class="platform-title">React Native</h3>
-                  <p class="platform-desc">크로스 플랫폼 앱 퍼블리싱</p>
-                  <ul class="platform-features">
-                    <li>네이티브 앱 UI</li>
-                    <li>크로스 플랫폼</li>
-                    <li>스타일 컴포넌트</li>
-                  </ul>
-                </div>
-                <div class="platform-tags">
-                  <span class="tag">#ReactNative</span>
-                  <span class="tag">#JavaScript</span>
-                  <span class="tag">#CSS</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 기타 -->
-            <div class="swiper-slide" data-category="web">
-              <div class="platform-card">
-                <div class="platform-icon">✨</div>
-                <div class="platform-content">
-                  <h3 class="platform-title">GSAP 애니메이션</h3>
-                  <p class="platform-desc">고급 인터랙션 애니메이션 구현</p>
-                  <ul class="platform-features">
-                    <li>ScrollTrigger</li>
-                    <li>Timeline 제어</li>
-                    <li>3D Transform</li>
-                  </ul>
-                </div>
-                <div class="platform-tags">
-                  <span class="tag">#GSAP</span>
-                  <span class="tag">#ScrollTrigger</span>
-                  <span class="tag">#Animation</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide" data-category="web">
-              <div class="platform-card">
-                <div class="platform-icon">🎨</div>
-                <div class="platform-content">
-                  <h3 class="platform-title">웹 접근성</h3>
-                  <p class="platform-desc">WCAG 2.1 기준 웹 접근성 준수</p>
-                  <ul class="platform-features">
-                    <li>시맨틱 마크업</li>
-                    <li>키보드 접근성</li>
-                    <li>스크린리더 대응</li>
-                  </ul>
-                </div>
-                <div class="platform-tags">
-                  <span class="tag">#Accessibility</span>
-                  <span class="tag">#WAI-ARIA</span>
-                  <span class="tag">#Semantic</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <button class="swiper-button-next platform-next">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M9 18L15 12L9 6"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
           </svg>
         </button>
       </div>

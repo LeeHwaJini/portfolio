@@ -8,6 +8,7 @@ export function initPreloader(onComplete) {
   const preloader = document.querySelector('.preloader');
   if (!preloader) { onComplete?.(); return; }
 
+  const preloaderInner = document.querySelector('.preloader-inner');
   const wordEl = document.querySelector('.preloader-word');
   const pixelsContainer = document.querySelector('.preloader-pixels');
 
@@ -69,6 +70,7 @@ export function initPreloader(onComplete) {
   let time = 0;
   let lerpX = 0.5;
   let rafId;
+  let frameCount = 0;
 
   const animateInvaders = () => {
     lerpX = lerp(lerpX, mouseX / window.innerWidth, 0.08);
@@ -92,8 +94,16 @@ export function initPreloader(onComplete) {
       });
     });
 
+    // 첫 프레임 이후 preloader 표시
+    if (frameCount === 1) {
+      preloaderInner.classList.add('ready');
+    }
+    frameCount++;
+
     rafId = requestAnimationFrame(animateInvaders);
   };
+  
+  // 애니메이션 시작
   animateInvaders();
 
   // ===================================
@@ -104,7 +114,9 @@ export function initPreloader(onComplete) {
     window.removeEventListener('mousemove', handleMouse);
     window.removeEventListener('touchmove', handleMouse);
 
+    // GSAP이 없으면 즉시 종료
     if (!gsap) {
+      console.warn('GSAP not found, skipping preloader animation');
       preloader.style.display = 'none';
       onComplete?.();
       return;
@@ -139,5 +151,15 @@ export function initPreloader(onComplete) {
     });
   };
 
+  // 2.8초 후 자동 시작
   setTimeout(startPixelExplosion, 2800);
+  
+  // 안전장치: 5초 후 무조건 종료
+  setTimeout(() => {
+    if (preloader.style.display !== 'none') {
+      console.warn('Preloader timeout - forcing close');
+      preloader.style.display = 'none';
+      onComplete?.();
+    }
+  }, 5000);
 }

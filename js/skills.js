@@ -4,20 +4,6 @@
 const { gsap, ScrollTrigger } = window;
 
 export function initSkillsAnimations() {
-  // About Description
-  gsap.from(".about-description", {
-    scrollTrigger: {
-      trigger: ".about-description",
-      start: "top 80%",
-      toggleActions: "play none none reverse",
-    },
-    y: 40,
-    opacity: 0,
-    duration: 0.8,
-    ease: "power3.out",
-    delay: 0.2,
-  });
-
   // Stats Counter Animation
   const statNumbers = document.querySelectorAll(".stat-number");
   statNumbers.forEach((stat) => {
@@ -47,18 +33,21 @@ export function initSkillsAnimations() {
     });
   });
 
-  // Tech Nodes
-  gsap.from(".tech-node", {
-    scrollTrigger: {
-      trigger: ".tech-cluster",
-      start: "top 80%",
-      toggleActions: "play none none reverse",
-    },
-    scale: 0,
-    duration: 0.8,
-    stagger: 0.1,
-    ease: "back.out(1.7)",
-  });
+  // Tech Nodes (요소가 있을 때만 실행)
+  const techNodes = document.querySelectorAll(".tech-node");
+  if (techNodes.length > 0) {
+    gsap.from(".tech-node", {
+      scrollTrigger: {
+        trigger: ".tech-cluster",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+      scale: 0,
+      duration: 0.8,
+      stagger: 0.1,
+      ease: "back.out(1.7)",
+    });
+  }
 
   // Connection Lines
   const connectionLines = document.querySelectorAll(".connection-line");
@@ -141,6 +130,9 @@ export function initSkillsAnimations() {
 
 function initTechNodesInteractive() {
   const techNodes = document.querySelectorAll(".tech-node");
+
+  // 요소가 없으면 종료
+  if (techNodes.length === 0) return;
 
   techNodes.forEach((node) => {
     node.addEventListener("mouseenter", () => {

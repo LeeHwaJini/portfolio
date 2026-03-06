@@ -30,15 +30,16 @@ export function initProjects() {
     force3D: true,
     scrollTrigger: {
       trigger: projectSection,
-      start: "top top",
+      start: "top top", // 섹션 상단이 뷰포트 상단에 닿을 때 시작
       end: getEndValue,
       scrub: 1,
       pin: true,
       pinSpacing: true,
       invalidateOnRefresh: true,
-      anticipatePin: 1,
-      onEnter: () => console.log("Projects section entered"),
-      onLeave: () => console.log("Projects section left"),
+      // anticipatePin: 1, // 제거 - 이게 문제를 일으킬 수 있음
+      markers: false, // 디버그용 마커 제거
+      onEnter: () => console.log("✅ Projects section entered at correct position"),
+      onLeave: () => console.log("✅ Projects section left"),
     },
   });
 

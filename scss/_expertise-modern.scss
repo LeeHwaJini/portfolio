@@ -1,0 +1,271 @@
+/* ===================================
+   Modern Expertise Alternatives (2026)
+   =================================== */
+
+// ===================================
+// Style 1: Glassmorphism + 3D Floating Cards
+// ===================================
+.expertise-glass-3d {
+  background: #e8f4fc; // Light blue base (same as platforms section)
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  .glass-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1a1a1a; // Dark text for light background
+    text-align: center;
+    margin-bottom: 80px;
+    text-shadow: none;
+    position: relative;
+    z-index: 2;
+  }
+
+  .glass-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 80px;
+    perspective: 1000px;
+    position: relative;
+    z-index: 2; // Above aurora background
+  }
+
+  .glass-card {
+    position: relative;
+    height: 420px;
+    cursor: pointer;
+    transform-style: preserve-3d; // 3D 효과 유지
+
+    &.flipped {
+      .glass-card-inner {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+
+  .glass-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card-front,
+  .glass-card-back {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 24px;
+    padding: 50px 30px; // 완전히 동일한 패딩
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; // 둘 다 center
+  }
+
+  .glass-card-front {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+      0 8px 32px rgba(99, 179, 237, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+
+    .glass-icon {
+      font-size: 64px; // 80px → 64px로 축소
+      margin-bottom: 16px; // 20px → 16px로 축소
+      filter: drop-shadow(0 2px 8px rgba(99, 179, 237, 0.3));
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .glass-skill-name {
+      font-size: 26px; // 28px → 26px로 축소
+      font-weight: 700;
+      color: #1a1a1a;
+      text-shadow: none;
+    }
+
+    .glass-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(
+        circle,
+        rgba(99, 179, 237, 0.3) 0%,
+        transparent 70%
+      ); // Blue glow
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    &:hover .glass-glow {
+      opacity: 1;
+    }
+  }
+
+  .glass-card-back {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px rgba(99, 179, 237, 0.15);
+    transform: rotateY(180deg);
+    padding: 44px 36px;
+
+    .glass-back-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .glass-back-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      .glass-back-icon {
+        font-size: 46px;
+        filter: drop-shadow(0 2px 8px rgba(99, 179, 237, 0.3));
+      }
+
+      h4 {
+        font-size: 23px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin: 0;
+        text-align: center;
+      }
+    }
+
+    .glass-level-badge {
+      background: linear-gradient(135deg, #4299e1, #63b3ed);
+      color: #fff;
+      padding: 7px 18px;
+      border-radius: 18px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      box-shadow: 0 3px 12px rgba(66, 153, 225, 0.25);
+    }
+
+    .glass-features {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0 0 0;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      justify-content: center;
+
+      li {
+        position: relative;
+        color: #2d3748;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 7px 15px;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 18px;
+        border: 1px solid rgba(66, 153, 225, 0.2);
+        box-shadow: 0 2px 6px rgba(66, 153, 225, 0.08);
+        transition: all 0.25s ease;
+        cursor: default;
+        white-space: nowrap;
+        letter-spacing: 0.2px;
+
+        &:hover {
+          background: linear-gradient(135deg, #4299e1, #63b3ed);
+          border-color: rgba(66, 153, 225, 0.4);
+          box-shadow: 0 4px 12px rgba(66, 153, 225, 0.22);
+          transform: translateY(-2px);
+          color: #fff;
+        }
+
+        // Stagger animation on card flip
+        @for $i from 1 through 5 {
+          &:nth-child(#{$i}) {
+            animation: fadeInUp 0.35s ease #{$i * 0.06}s backwards;
+          }
+        }
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  // Aurora Background (Same as platforms section)
+  .aurora-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+
+    .fluid-ribbons {
+      width: 100%;
+      height: 100%;
+      display: block;
+
+      .ribbon {
+        animation: ribbonFloat 30s ease-in-out infinite;
+        transform-origin: center center;
+      }
+
+      .ribbon-1 {
+        animation-delay: 0s;
+      }
+
+      .ribbon-2 {
+        animation-delay: -10s;
+      }
+
+      .ribbon-3 {
+        animation-delay: -20s;
+      }
+    }
+  }
+
+  @keyframes ribbonFloat {
+    0%,
+    100% {
+      transform: rotate(-22deg) translateY(0) scale(1);
+    }
+    50% {
+      transform: rotate(-22deg) translateY(-20px) scale(1.02);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
