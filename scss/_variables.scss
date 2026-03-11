@@ -7,6 +7,7 @@ $color-gray: #515151;
 $color-light-gray: #f5f5f5;
 $color-blue: #54cbf5;
 $color-border: #e0e0e0;
+$color-light-blue-gray: #e8f4fc;
 
 // 한글: Pretendard
 // 영문: Poppins
@@ -34,6 +35,11 @@ $spacing-xxl: 10rem;
 
 $transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 $transition-quick: all 0.3s ease;
+
+// Breakpoints (Mobile-first approach)
+$breakpoint-tablet: 1023px;  // 태블릿
+$breakpoint-mobile: 767px;   // 모바일 가로/작은 태블릿
+$breakpoint-small: 440px;    // 모바일 세로
 
 // Magic Text Colors
 $color-magic-primary: #7998f2;

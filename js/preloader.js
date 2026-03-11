@@ -125,24 +125,24 @@ export function initPreloader(onComplete) {
     // 배경 투명화 (픽셀 폭발 후 뒤의 페이지가 보이도록)
     preloader.style.background = 'transparent';
 
-    // 텍스트 페이드아웃
+    // 텍스트 페이드아웃 (더 빠르게)
     gsap.to('.preloader-inner', {
       opacity: 0,
       scale: 1.2,
       filter: 'blur(12px)',
-      duration: 0.4,
+      duration: 0.3,
       ease: 'power2.in',
     });
 
-    // 픽셀 폭발 분산
+    // 픽셀 폭발 분산 (더 빠르게)
     gsap.to(Array.from(pixels), {
       opacity: 0,
       scale: () => Math.random() * 0.3 + 0.1,
       x: () => (Math.random() - 0.5) * window.innerWidth * 1.2,
       y: () => (Math.random() - 0.5) * window.innerHeight * 1.2,
       rotation: () => Math.random() * 900 - 450,
-      duration: () => 0.5 + Math.random() * 0.6,
-      stagger: { amount: 0.8, from: 'center', grid: 'auto' },
+      duration: () => 0.3 + Math.random() * 0.3, // 0.3~0.6초로 단축
+      stagger: { amount: 0.4, from: 'center', grid: 'auto' }, // 0.4초로 단축
       ease: 'power2.in',
       onComplete: () => {
         preloader.style.display = 'none';
@@ -151,15 +151,15 @@ export function initPreloader(onComplete) {
     });
   };
 
-  // 2.8초 후 자동 시작
-  setTimeout(startPixelExplosion, 2800);
+  // 1초 후 자동 시작 (더 빠르게)
+  setTimeout(startPixelExplosion, 1000);
   
-  // 안전장치: 5초 후 무조건 종료
+  // 안전장치: 2.5초 후 무조건 종료
   setTimeout(() => {
     if (preloader.style.display !== 'none') {
       console.warn('Preloader timeout - forcing close');
       preloader.style.display = 'none';
       onComplete?.();
     }
-  }, 5000);
+  }, 2500);
 }

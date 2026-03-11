@@ -1,56 +1,48 @@
 // ===================================
-// 네비게이션
+// 네비게이션 - 햄버거 메뉴
 // ===================================
 const { gsap } = window;
 
 export function initNavigation() {
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-menu");
+  const navbar = document.querySelector(".navbar");
+  const menuToggle = document.querySelector(".menu-toggle");
+  const fullscreenMenu = document.querySelector(".fullscreen-menu");
+  const menuLinks = document.querySelectorAll(".menu-link");
 
-  if (!hamburger || !navMenu) return;
+  if (!menuToggle || !fullscreenMenu) {
+    console.warn("Navigation elements not found");
+    return;
+  }
 
   // 햄버거 메뉴 토글
-  hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-
-    const spans = hamburger.querySelectorAll("span");
-    if (navMenu.classList.contains("active")) {
-      gsap.to(spans[0], { rotation: 45, y: 8, duration: 0.3 });
-      gsap.to(spans[1], { rotation: -45, y: -8, duration: 0.3 });
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navbar.classList.toggle("menu-open");
+    fullscreenMenu.classList.toggle("active");
+    
+    // body 스크롤 제어
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
     } else {
-      gsap.to(spans[0], { rotation: 0, y: 0, duration: 0.3 });
-      gsap.to(spans[1], { rotation: 0, y: 0, duration: 0.3 });
+      document.body.style.overflow = "";
     }
   });
 
-  // 스크롤 시 헤더 배경
-  const header = document.querySelector(".header");
-  let lastScroll = 0;
-
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > 100) {
-      header?.classList.add("scrolled");
-    } else {
-      header?.classList.remove("scrolled");
-    }
-
-    // 스크롤 방향에 따라 헤더 숨기기/보이기
-    if (currentScroll > lastScroll && currentScroll > 500) {
-      header?.classList.add("hidden");
-    } else {
-      header?.classList.remove("hidden");
-    }
-
-    lastScroll = currentScroll;
-  });
-
-  // 스무스 스크롤
-  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  // 메뉴 링크 클릭 시 메뉴 닫기 + 스크롤
+  menuLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      
+      if (!href || !href.startsWith('#')) return;
+      
       e.preventDefault();
-      const targetId = link.getAttribute("href").substring(1); // # 제거
+      
+      // 메뉴 닫기
+      navbar.classList.remove("menu-open");
+      fullscreenMenu.classList.remove("active");
+      document.body.style.overflow = "";
+      
+      // 스크롤
+      const targetId = href.substring(1);
 
       if (targetId === "home" || targetId === "") {
         gsap.to(window, {
@@ -68,14 +60,26 @@ export function initNavigation() {
           });
         }
       }
-
-      // 모바일 메뉴 닫기
-      if (navMenu.classList.contains("active")) {
-        navMenu.classList.remove("active");
-        const spans = hamburger.querySelectorAll("span");
-        gsap.to(spans[0], { rotation: 0, y: 0, duration: 0.3 });
-        gsap.to(spans[1], { rotation: 0, y: 0, duration: 0.3 });
-      }
     });
   });
+
+  // 스크롤 시 헤더 자동 숨김
+  let lastScroll = 0;
+  
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    // 스크롤 방향 감지 (아래로 스크롤 시 숨김)
+    if (currentScroll > lastScroll && currentScroll > 300) {
+      // 아래로 스크롤 && 300px 이상 내려갔을 때
+      navbar?.classList.add("hidden");
+    } else if (currentScroll < lastScroll) {
+      // 위로 스크롤
+      navbar?.classList.remove("hidden");
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  console.log("✨ Navigation initialized");
 }

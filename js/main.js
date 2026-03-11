@@ -1,6 +1,13 @@
 // ===================================
 // Main Entry Point
 // ===================================
+
+// ⭐ 스크립트 로드 즉시 스크롤 위치 리셋 (브라우저 복원 방지)
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 import { initPreloader } from './preloader.js';
 import { initCursor } from './cursor.js';
 import { initNavigation } from './navigation.js';
@@ -12,10 +19,8 @@ import { initScrollSequence } from './sequence.js';
 import { initPlatforms } from './platforms.js';
 import { initModernExpertise } from './expertise-modern.js';
 import { initAboutAlternatives } from './about-alternatives.js';
-
-// 페이지 새로고침 시 항상 최상단에서 시작
-history.scrollRestoration = 'manual';
-window.scrollTo(0, 0);
+import { initProjectsOverlay } from './projects-overlay.js';
+import { initRotatingGallery } from './rotating-gallery.js';
 
 // GSAP 초기화
 const { gsap, ScrollTrigger, ScrollToPlugin } = window;
@@ -40,36 +45,44 @@ if (scrollProgressBar) {
 // 초기화 시퀀스
 // ===================================
 function init() {
+  // ⭐ 다시 한번 확인 (브라우저가 늦게 복원할 수도 있음)
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  
   // 1. UI 컴포넌트 초기화
   initCursor();
   initNavigation();
+  initProjectsOverlay(); // 프로젝트 오버레이 추가
   
   // 2. 섹션별 애니메이션 초기화
   initHero();               // 01. Hero (파티클 네트워크)
   initAboutAlternatives();  // 01. About Alternatives (타임라인/매거진/스플릿)
   initSkillsAnimations();   // 02. Expertise
-  initModernExpertise();    // 02. Modern Expertise Alternatives
+  // initModernExpertise();    // 02. Modern Expertise Alternatives (교체됨)
+  initRotatingGallery();    // 02. Rotating Gallery (Expertise)
   initCircularSlider();     // 03. Experience (도넛 슬라이더)
   initPlatforms();          // 04. Platforms & Solutions
   initProjects();           // 05. Projects (가로 스크롤)
   initScrollSequence();     // 마지막. Scroll Sequence
 
-  // 3. 프리로더 동안 스크롤 차단 (프리로더 비활성화로 주석 처리)
-  // document.body.style.overflow = 'hidden';
-
-  // 4. 프리로더 실행 → 완료 후 페이지 활성화
+  // 3. 프리로더 실행 → 완료 후 페이지 활성화
   initPreloader(() => {
     // 프리로더 강제 제거
     const preloader = document.querySelector('.preloader');
     if (preloader) {
       preloader.style.display = 'none';
-      preloader.remove(); // DOM에서 완전히 제거
+      preloader.remove();
     }
-    
-    document.body.style.overflow = '';
-    window.scrollTo(0, 0);
 
-    // ScrollTrigger 재계산 (정확한 위치 계산을 위해 2프레임 대기)
+    // ⭐ 프리로더 완료 후에도 다시 맨 위로
+    window.scrollTo(0, 0);
+    
+    // ⭐ 스크롤 다시 허용
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+
+    // ScrollTrigger 재계산
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         ScrollTrigger.refresh(true);
@@ -93,10 +106,28 @@ if (document.readyState === "loading") {
 // 리사이즈 핸들러 (전역 ScrollTrigger 갱신)
 // ===================================
 let resizeTimer;
+let lastWidth = window.innerWidth;
+
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimer);
+  
   resizeTimer = setTimeout(() => {
-    ScrollTrigger.refresh();
-    console.log("%c🔄 ScrollTrigger Refreshed", "color: #4CAF50; font-weight: 600;");
-  }, 250);
+    const currentWidth = window.innerWidth;
+    
+    // 너비가 실제로 변경된 경우만 처리 (모바일 주소창 숨김 등 무시)
+    if (Math.abs(currentWidth - lastWidth) > 50) {
+      console.log("%c🔄 Significant resize detected", "color: #FF9800; font-weight: 600;");
+      
+      // 1. 모든 ScrollTrigger 강제 재계산
+      ScrollTrigger.getAll().forEach(trigger => {
+        trigger.refresh();
+      });
+      
+      // 2. 전체 refresh (핀 spacing 재계산)
+      ScrollTrigger.refresh(true);
+      
+      console.log("%c✅ ScrollTrigger Refreshed (Full)", "color: #4CAF50; font-weight: 600;");
+      lastWidth = currentWidth;
+    }
+  }, 100);
 });
