@@ -8,6 +8,7 @@
 @import "scss/mixins";
 @import "scss/reset";
 @import "scss/expertise-modern";
+@import "scss/rotating-gallery";
 
 /* ===================================
    Fluid Ribbon Background — SVG 기반 (tech-showcase-section 전용)
@@ -143,104 +144,25 @@ body {
 }
 
 /* ===================================
-   Preloader
+   Preloader — PORTFOLIO Drop Animation
    =================================== */
-// ===================================
-// Preloader — Space Invaders + Pixel Explosion
-// ===================================
 .preloader {
   z-index: 10000;
   position: fixed;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(135deg, #f0f7ff 0%, #e3f2ff 50%, #d6efff 100%);
-  user-select: none;
-}
-
-.preloader-inner {
-  z-index: 2;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  opacity: 0; // 처음에 숨김
-  text-align: center;
-  transform: translate(-50%, -50%);
-
-  &.ready {
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
-}
-
-.preloader-word {
-  position: relative;
-  color: #1a1a1a;
-  font-size: 52px;
-  font-weight: 700;
-
-  &::before {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    top: 14px;
-    left: 0;
-    width: 88px;
-    height: 88px;
-    background: radial-gradient(
-      circle at 40% 20%,
-      #ffffff 0%,
-      #4299e1 20%,
-      #2b6cb0 60%,
-      #1a4d7a 100%
-    );
-    border-radius: 50%;
-    box-shadow: 0 8px 32px rgba(66, 153, 225, 0.4);
-    filter: blur(0.5px);
-    pointer-events: none;
-    transform: translate(-40%, -35%);
-  }
-
-  span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: $color-white;
-    font-size: inherit;
-    font-weight: inherit;
-    letter-spacing: 0;
-    will-change: transform, opacity, filter;
-  }
-}
-
-.preloader-counter {
-  margin-top: 60px;
-  color: rgba(26, 26, 26, 0.5);
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 6px;
-
-  .counter-num {
-    font-variant-numeric: tabular-nums;
-  }
-}
-
-.preloader-pixels {
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: grid;
+  inset: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
+  background: #f4f8ff; // SVG 배경 가장자리색과 동일
+  user-select: none;
+  overflow: hidden;
 }
 
-.pixel {
-  background: #ffffff;
-  will-change: transform, opacity;
+.preloader-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden; // JS에서 visible로 전환
 }
 
 /* ===================================
@@ -1212,8 +1134,7 @@ body {
   position: relative;
   overflow: hidden;
   scroll-margin-top: 150px;
-  background: $color-light-gray;
-  isolation: isolate; // 내부 tech-node z-index를 외부와 격리
+  isolation: isolate;
   @include section-padding;
 }
 

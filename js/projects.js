@@ -49,7 +49,6 @@ export function initProjects() {
       pin: true,
       pinSpacing: true,
       invalidateOnRefresh: true,
-      anticipatePin: 1,
       fastScrollEnd: true,
       markers: false,
       id: "projects-horizontal",

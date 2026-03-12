@@ -116,18 +116,9 @@ window.addEventListener("resize", () => {
     
     // 너비가 실제로 변경된 경우만 처리 (모바일 주소창 숨김 등 무시)
     if (Math.abs(currentWidth - lastWidth) > 50) {
-      console.log("%c🔄 Significant resize detected", "color: #FF9800; font-weight: 600;");
-      
-      // 1. 모든 ScrollTrigger 강제 재계산
-      ScrollTrigger.getAll().forEach(trigger => {
-        trigger.refresh();
-      });
-      
-      // 2. 전체 refresh (핀 spacing 재계산)
+      // refresh(true) 한 번만 — 중복 호출 시 pin-spacer 계산 꼬임
       ScrollTrigger.refresh(true);
-      
-      console.log("%c✅ ScrollTrigger Refreshed (Full)", "color: #4CAF50; font-weight: 600;");
       lastWidth = currentWidth;
     }
-  }, 100);
+  }, 150);
 });
