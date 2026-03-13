@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
 
+    <!-- ⭐ 스크롤 위치 즉시 리셋 (가장 먼저 실행) -->
     <script>
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
@@ -17,11 +18,6 @@
       });
     </script>
 
-    <!-- Poppins Bold (?�리로더 SVG ?�스?�용) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
     <!-- Google Fonts - Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,7 +25,8 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <!-- Pretendard Dynamic Subset (?��? ?�용) -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Pretendard Dynamic Subset (한글 전용) -->
     <link
       rel="stylesheet"
       as="style"
@@ -49,44 +46,218 @@
 
     <!-- Preloader Animation -->
     <div class="preloader">
-    
-      <svg class="preloader-svg" xmlns="http://www.w3.org/2000/svg"
-        width="100%" height="100%"
-        viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice">
+      <svg
+        class="preloader-svg"
+        xmlns="http://www.w3.org/2000/svg"
+        width="100%"
+        height="100%"
+        viewBox="0 0 1200 700"
+        preserveAspectRatio="xMidYMid slice"
+      >
         <defs>
-          <radialGradient id="preloaderBgGrad" cx="600" cy="350" r="700" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#ffffff"/>
-            <stop offset="100%" stop-color="#f0f5ff"/>
+          <radialGradient
+            id="preloaderBgGrad"
+            cx="600"
+            cy="350"
+            r="700"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0%" stop-color="#ffffff" />
+            <stop offset="100%" stop-color="#f0f5ff" />
           </radialGradient>
-         
-          <linearGradient id="dotGrad" x1="1097" y1="260" x2="100" y2="400" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#74e7fa"/>
-            <stop offset="100%" stop-color="#7998f2"/>
+
+          <linearGradient
+            id="dotGrad"
+            x1="1097"
+            y1="260"
+            x2="100"
+            y2="400"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0%" stop-color="#74e7fa" />
+            <stop offset="100%" stop-color="#7998f2" />
           </linearGradient>
         </defs>
 
-        <rect width="100%" height="100%" fill="url(#preloaderBgGrad)"/>
+        <rect width="100%" height="100%" fill="url(#preloaderBgGrad)" />
 
         <g class="whole">
-          <g class="letter-group"><text class="ltr" x="0" y="410" font-family="Poppins, sans-serif" font-weight="700" font-size="165" stroke="rgba(84,203,245,0.75)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0">P</text></g>
-          <g class="letter-group"><text class="ltr" x="0" y="410" font-family="Poppins, sans-serif" font-weight="700" font-size="165" stroke="rgba(84,203,245,0.75)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0">O</text></g>
-          <g class="letter-group"><text class="ltr" x="0" y="410" font-family="Poppins, sans-serif" font-weight="700" font-size="165" stroke="rgba(84,203,245,0.75)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0">R</text></g>
-          <g class="letter-group"><text class="ltr" x="0" y="410" font-family="Poppins, sans-serif" font-weight="700" font-size="165" stroke="rgba(84,203,245,0.75)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0">T</text></g>
-          <g class="letter-group"><text class="ltr" x="0" y="410" font-family="Poppins, sans-serif" font-weight="700" font-size="165" stroke="rgba(84,203,245,0.75)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0">F</text></g>
-          <g class="letter-group"><text class="ltr" x="0" y="410" font-family="Poppins, sans-serif" font-weight="700" font-size="165" stroke="rgba(84,203,245,0.75)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0">O</text></g>
-          <g class="letter-group"><text class="ltr" x="0" y="410" font-family="Poppins, sans-serif" font-weight="700" font-size="165" stroke="rgba(84,203,245,0.75)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0">L</text></g>
-          <g class="letter-group"><text class="ltr" x="0" y="410" font-family="Poppins, sans-serif" font-weight="700" font-size="165" stroke="rgba(84,203,245,0.75)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0">I</text></g>
-          <g class="letter-group"><text class="ltr" x="0" y="410" font-family="Poppins, sans-serif" font-weight="700" font-size="165" stroke="rgba(84,203,245,0.75)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0">O</text></g>
+          <g class="letter-group">
+            <text
+              class="ltr"
+              x="0"
+              y="410"
+              font-family="Poppins, sans-serif"
+              font-weight="700"
+              font-size="165"
+              stroke="rgba(84,203,245,0.75)"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              opacity="0"
+            >
+              P
+            </text>
+          </g>
+          <g class="letter-group">
+            <text
+              class="ltr"
+              x="0"
+              y="410"
+              font-family="Poppins, sans-serif"
+              font-weight="700"
+              font-size="165"
+              stroke="rgba(84,203,245,0.75)"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              opacity="0"
+            >
+              O
+            </text>
+          </g>
+          <g class="letter-group">
+            <text
+              class="ltr"
+              x="0"
+              y="410"
+              font-family="Poppins, sans-serif"
+              font-weight="700"
+              font-size="165"
+              stroke="rgba(84,203,245,0.75)"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              opacity="0"
+            >
+              R
+            </text>
+          </g>
+          <g class="letter-group">
+            <text
+              class="ltr"
+              x="0"
+              y="410"
+              font-family="Poppins, sans-serif"
+              font-weight="700"
+              font-size="165"
+              stroke="rgba(84,203,245,0.75)"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              opacity="0"
+            >
+              T
+            </text>
+          </g>
+          <g class="letter-group">
+            <text
+              class="ltr"
+              x="0"
+              y="410"
+              font-family="Poppins, sans-serif"
+              font-weight="700"
+              font-size="165"
+              stroke="rgba(84,203,245,0.75)"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              opacity="0"
+            >
+              F
+            </text>
+          </g>
+          <g class="letter-group">
+            <text
+              class="ltr"
+              x="0"
+              y="410"
+              font-family="Poppins, sans-serif"
+              font-weight="700"
+              font-size="165"
+              stroke="rgba(84,203,245,0.75)"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              opacity="0"
+            >
+              O
+            </text>
+          </g>
+          <g class="letter-group">
+            <text
+              class="ltr"
+              x="0"
+              y="410"
+              font-family="Poppins, sans-serif"
+              font-weight="700"
+              font-size="165"
+              stroke="rgba(84,203,245,0.75)"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              opacity="0"
+            >
+              L
+            </text>
+          </g>
+          <g class="letter-group">
+            <text
+              class="ltr"
+              x="0"
+              y="410"
+              font-family="Poppins, sans-serif"
+              font-weight="700"
+              font-size="165"
+              stroke="rgba(84,203,245,0.75)"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              opacity="0"
+            >
+              I
+            </text>
+          </g>
+          <g class="letter-group">
+            <text
+              class="ltr"
+              x="0"
+              y="410"
+              font-family="Poppins, sans-serif"
+              font-weight="700"
+              font-size="165"
+              stroke="rgba(84,203,245,0.75)"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              opacity="0"
+            >
+              O
+            </text>
+          </g>
 
           <!-- Shine sweep -->
-          <rect class="shine" fill="url(#dotGrad)" opacity="0.08"
-            x="-200" y="240" width="140" height="200"
-            transform="skewX(-12)"/>
-
+          <rect
+            class="shine"
+            fill="url(#dotGrad)"
+            opacity="0.08"
+            x="-200"
+            y="240"
+            width="140"
+            height="200"
+            transform="skewX(-12)"
+          />
         </g>
 
         <!-- Baseline -->
-        <rect class="baseline" x="60" y="435" width="1080" height="4" fill="#c0ccf0"/>
+        <rect
+          class="baseline"
+          x="60"
+          y="435"
+          width="1080"
+          height="4"
+          fill="#c0ccf0"
+        />
       </svg>
     </div>
 
@@ -145,8 +316,8 @@
         </div>
 
         <div class="timeline-intro">
-          <h2 class="timeline-title">?�장??기록</h2>
-          <p class="timeline-subtitle">2022?��???지금까지</p>
+          <h2 class="timeline-title">성장의 기록</h2>
+          <p class="timeline-subtitle">2022년부터 지금까지</p>
         </div>
 
         <div class="timeline-line"></div>
@@ -156,8 +327,8 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <span class="timeline-year">2022</span>
-              <h3>?�블리셔 커리???�작</h3>
-              <p>?�벤???�딩?�이지 ?�작 �?br />반응?????�블리싱</p>
+              <h3>퍼블리셔 커리어 시작</h3>
+              <p>이벤트/랜딩페이지 제작 및<br />반응형 웹 퍼블리싱</p>
 
               <div class="detail-features">
                 <span class="feature-tag">HTML5</span>
@@ -172,16 +343,17 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <span class="timeline-year">2023</span>
-              <h3>?�양???�랫??경험</h3>
+              <h3>다양한 플랫폼 경험</h3>
               <p>
-                React Native, 카페24, ?�드?�레????br />?�양???�경?�서??                ?�블리싱
+                React Native, 카페24, 워드프레스 등<br />다양한 환경에서의
+                퍼블리싱
               </p>
 
               <div class="detail-features">
                 <span class="feature-tag">React Native</span>
                 <span class="feature-tag">Cafe24</span>
                 <span class="feature-tag">WordPress</span>
-                <span class="feature-tag">고도�?/span>
+                <span class="feature-tag">고도몰</span>
               </div>
             </div>
           </div>
@@ -190,8 +362,8 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <span class="timeline-year">2024~2025</span>
-              <h3>Vue.js ?�레?�워???�입</h3>
-              <p>Vue.js 문법???�용??br />컴포?�트 기반 ???�블리싱</p>
+              <h3>Vue.js 프레임워크 도입</h3>
+              <p>Vue.js 문법을 활용한<br />컴포넌트 기반 웹 퍼블리싱</p>
               <div class="detail-features">
                 <span class="feature-tag">Vue.js</span>
                 <span class="feature-tag">SCSS</span>
@@ -203,9 +375,9 @@
           <div class="timeline-item" data-year="2026">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <span class="timeline-year">2025~2026 (?�재)</span>
-              <h3>Vue 기반 ?�로?�트 진행</h3>
-              <p>Vue ?�로?�트 ???�블리싱 �?br />Axios�??�용??API ?�동</p>
+              <span class="timeline-year">2025~2026 (현재)</span>
+              <h3>Vue 기반 프로젝트 진행</h3>
+              <p>Vue 프로젝트 웹 퍼블리싱 및<br />Axios를 활용한 API 연동</p>
               <div class="detail-features">
                 <span class="feature-tag">Vue.js</span>
                 <span class="feature-tag">Axios</span>
@@ -228,11 +400,11 @@
         <button type="button" class="view-all-btn">
           <span class="view-all-content">
             <span class="view-all-text">
-              <span class="arrow">??/span>
+              <span class="arrow">↗</span>
               <span>View All</span>
-              <span class="arrow">??/span>
+              <span class="arrow">↗</span>
               <span>View All</span>
-              <span class="arrow">??/span>
+              <span class="arrow">↗</span>
               <span>View All</span>
             </span>
           </span>
@@ -246,9 +418,9 @@
               <img src="./images/portfoilo_riman.png" alt="portfoilo_riman" />
             </div>
             <div class="project-info">
-              <div class="project-category">반응??WEB</div>
-              <h3 class="project-title">리만코리??/h3>
-              <p class="project-description">리만코리???�이???�블리싱</p>
+              <div class="project-category">반응형 WEB</div>
+              <h3 class="project-title">리만코리아</h3>
+              <p class="project-description">리만코리아 사이트 퍼블리싱</p>
 
               <div class="detail-features">
                 <div class="feature-tag">#Vue3</div>
@@ -264,9 +436,9 @@
               <img src="./images/portfolio_qbid.png" alt="portfolio_qbid" />
             </div>
             <div class="project-info">
-              <div class="project-category">?�응??WEB</div>
+              <div class="project-category">반응형 WEB</div>
               <h3 class="project-title">Q-bid</h3>
-              <p class="project-description">Q-bid ?�사?�트 ?�블리싱</p>
+              <p class="project-description">Q-bid 웹사이트 퍼블리싱</p>
 
               <div class="detail-features">
                 <div class="feature-tag">#Vue2</div>
@@ -284,8 +456,8 @@
             </div>
             <div class="project-info">
               <div class="project-category">APP</div>
-              <h3 class="project-title">?�화?�료??/h3>
-              <p class="project-description">?�화?�료??APP ?�블리싱</p>
+              <h3 class="project-title">이화의료원</h3>
+              <p class="project-description">이화의료원 APP 퍼블리싱</p>
 
               <div class="detail-features">
                 <div class="feature-tag">#ReactNative</div>
@@ -302,7 +474,7 @@
             <div class="project-info">
               <div class="project-category">WEB</div>
               <h3 class="project-title">DARI</h3>
-              <p class="project-description">마�????�합 ??DARI ?�블리싱</p>
+              <p class="project-description">마케팅 통합 툴 DARI 퍼블리싱</p>
               <div class="detail-features">
                 <div class="feature-tag">#HTML</div>
                 <div class="feature-tag">#CSS</div>
@@ -319,12 +491,12 @@
               />
             </div>
             <div class="project-info">
-              <div class="project-category">고도�?/div>
-              <h3 class="project-title">로프?�샵</h3>
-              <p class="project-description">로프?�샵 ?�이??리뉴??/p>
+              <div class="project-category">고도몰</div>
+              <h3 class="project-title">로프트샵</h3>
+              <p class="project-description">로프트샵 사이트 리뉴얼</p>
 
               <div class="detail-features">
-                <div class="feature-tag">#고도�?/div>
+                <div class="feature-tag">#고도몰</div>
                 <div class="feature-tag">#HTML</div>
                 <div class="feature-tag">#CSS</div>
                 <div class="feature-tag">#jQuery</div>
@@ -338,9 +510,9 @@
             </div>
             <div class="project-info">
               <div class="project-category">카페24</div>
-              <h3 class="project-title">?�누???�렌즈몰</h3>
+              <h3 class="project-title">이누스 프렌즈몰</h3>
               <p class="project-description">
-                ?�누?�프?�즈�?UX/UI 개선 ?�업 ?�영
+                이누스프렌즈몰 UX/UI 개선 작업 운영
               </p>
 
               <div class="detail-features">
@@ -361,7 +533,6 @@
       class="expertise-section rotating-gallery-section"
       data-section="rotating-gallery"
     >
-
       <div class="section-label">
         <span class="label-number">03</span>
         <span class="label-text">Expertise</span>
@@ -379,9 +550,9 @@
                   alt="HTML5"
                 />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">?��</div>
+                  <div class="gallery-icon">🌐</div>
                   <h4 class="gallery-title">HTML5</h4>
-                  <p class="gallery-desc">?�맨??마크??/p>
+                  <p class="gallery-desc">시맨틱 마크업</p>
                 </div>
               </div>
             </div>
@@ -395,9 +566,9 @@
                   alt="CSS/SCSS"
                 />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">?��</div>
+                  <div class="gallery-icon">🎨</div>
                   <h4 class="gallery-title">CSS/SCSS</h4>
-                  <p class="gallery-desc">반응???�이?�웃</p>
+                  <p class="gallery-desc">반응형 레이아웃</p>
                 </div>
               </div>
             </div>
@@ -411,7 +582,7 @@
                   alt="JavaScript"
                 />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">??/div>
+                  <div class="gallery-icon">⚡</div>
                   <h4 class="gallery-title">JavaScript</h4>
                   <p class="gallery-desc">ES6+ 문법</p>
                 </div>
@@ -427,7 +598,7 @@
                   alt="Vue.js"
                 />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">?��</div>
+                  <div class="gallery-icon">💚</div>
                   <h4 class="gallery-title">Vue.js</h4>
                   <p class="gallery-desc">Vue 3 Composition</p>
                 </div>
@@ -443,7 +614,7 @@
                   alt="GSAP"
                 />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">?��</div>
+                  <div class="gallery-icon">✨</div>
                   <h4 class="gallery-title">GSAP</h4>
                   <p class="gallery-desc">ScrollTrigger</p>
                 </div>
@@ -459,9 +630,9 @@
                   alt="Responsive"
                 />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">?��</div>
+                  <div class="gallery-icon">📱</div>
                   <h4 class="gallery-title">Responsive</h4>
-                  <p class="gallery-desc">?�로??브라?�징</p>
+                  <p class="gallery-desc">크로스 브라우징</p>
                 </div>
               </div>
             </div>
@@ -471,9 +642,9 @@
               <div class="gallery-card">
                 <img class="gallery-image" src="./images/test3.png" alt="Git" />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">?��</div>
+                  <div class="gallery-icon">🔀</div>
                   <h4 class="gallery-title">Git</h4>
-                  <p class="gallery-desc">?�업 ?�수 ?�킬</p>
+                  <p class="gallery-desc">협업 필수 스킬</p>
                 </div>
               </div>
             </div>
@@ -487,9 +658,9 @@
                   alt="Figma"
                 />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">?��</div>
+                  <div class="gallery-icon">🎯</div>
                   <h4 class="gallery-title">Figma</h4>
-                  <p class="gallery-desc">?�자???�업 ??/p>
+                  <p class="gallery-desc">디자이너와 협업</p>
                 </div>
               </div>
             </div>
@@ -503,9 +674,9 @@
                   alt="React Native"
                 />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">?��</div>
+                  <div class="gallery-icon">📲</div>
                   <h4 class="gallery-title">React Native</h4>
-                  <p class="gallery-desc">?�로?�플?�폼 ??/p>
+                  <p class="gallery-desc">크로스플랫폼 앱</p>
                 </div>
               </div>
             </div>
@@ -519,9 +690,9 @@
                   alt="TypeScript"
                 />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">?��</div>
+                  <div class="gallery-icon">🔷</div>
                   <h4 class="gallery-title">TypeScript</h4>
-                  <p class="gallery-desc">?�???�전??/p>
+                  <p class="gallery-desc">타입 안전성</p>
                 </div>
               </div>
             </div>
@@ -535,7 +706,7 @@
                   alt="jQuery"
                 />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">??/div>
+                  <div class="gallery-icon">💻</div>
                   <h4 class="gallery-title">jQuery</h4>
                   <p class="gallery-desc">DOM 조작</p>
                 </div>
@@ -551,9 +722,9 @@
                   alt="Webpack"
                 />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">?��</div>
+                  <div class="gallery-icon">📦</div>
                   <h4 class="gallery-title">Webpack</h4>
-                  <p class="gallery-desc">번들�??�구</p>
+                  <p class="gallery-desc">번들링 도구</p>
                 </div>
               </div>
             </div>
@@ -598,11 +769,11 @@
 
             <div class="detail-content active" data-detail="0">
               <div class="num">01</div>
-              <h2 class="detail-title">?�규 구축</h2>
-              <p class="detail-desc">처음부???�까지, ?�전???�사?�트 구축</p>
+              <h2 class="detail-title">신규 구축</h2>
+              <p class="detail-desc">처음부터 끝까지, 완전한 웹사이트 구축</p>
               <div class="detail-features">
-                <span class="feature-tag">#컴포?�트 관�?/span>
-                <span class="feature-tag">#반응???�블리싱</span>
+                <span class="feature-tag">#컴포넌트 관리</span>
+                <span class="feature-tag">#반응형 퍼블리싱</span>
               </div>
             </div>
           </li>
@@ -613,8 +784,8 @@
 
             <div class="detail-content" data-detail="1">
               <div class="num">02</div>
-              <h2 class="detail-title">?�이??리뉴??/h2>
-              <p class="detail-desc">리뉴???�로?�트</p>
+              <h2 class="detail-title">사이트 리뉴얼</h2>
+              <p class="detail-desc">리뉴얼 프로젝트</p>
               <div class="detail-features">
                 <span class="feature-tag">#코드 분석</span>
                 <span class="feature-tag">#UI/UX 개선</span>
@@ -628,11 +799,11 @@
 
             <div class="detail-content" data-detail="2">
               <div class="num">03</div>
-              <h2 class="detail-title">?�영 & ?��?보수</h2>
-              <p class="detail-desc">?�정?�인 ?�비???�영</p>
+              <h2 class="detail-title">운영 & 유지보수</h2>
+              <p class="detail-desc">안정적인 서비스 운영</p>
               <div class="detail-features">
-                <span class="feature-tag">#?�슈 ?�??/span>
-                <span class="feature-tag">#콘텐�??�데?�트</span>
+                <span class="feature-tag">#이슈 대응</span>
+                <span class="feature-tag">#콘텐츠 업데이트</span>
               </div>
             </div>
           </li>
@@ -643,11 +814,11 @@
 
             <div class="detail-content" data-detail="3">
               <div class="num">04</div>
-              <h2 class="detail-title">?�딩?�이지 ?�작</h2>
-              <p class="detail-desc">?�환???��? ?�이지 구축</p>
+              <h2 class="detail-title">랜딩페이지 제작</h2>
+              <p class="detail-desc">전환율 높은 페이지 구축</p>
               <div class="detail-features">
-                <span class="feature-tag">#빠른 ?�블리싱</span>
-                <span class="feature-tag">#반응??/span>
+                <span class="feature-tag">#빠른 퍼블리싱</span>
+                <span class="feature-tag">#반응형</span>
               </div>
             </div>
           </li>
@@ -655,7 +826,7 @@
       </div>
 
       <div class="featured-slider-btn-area">
-        <button class="prev nav-prev" aria-label="?�전">
+        <button class="prev nav-prev" aria-label="이전">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -670,7 +841,7 @@
             <polyline points="15 18 9 12 15 6" />
           </svg>
         </button>
-        <button class="next nav-next" aria-label="?�음">
+        <button class="next nav-next" aria-label="다음">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -691,26 +862,26 @@
     <!-- Scroll Sequence Section -->
     <section class="scroll-sequence-section">
       <div class="sequence-container">
-        <!-- ?�더 그래??-->
+        <!-- 폴더 그래픽 -->
         <div class="folder-container">
-          <!-- ?�더 ?�면 -->
+          <!-- 폴더 뒷면 -->
           <div class="folder-back"></div>
-          <!-- ?�더 ?�면 -->
+          <!-- 폴더 앞면 -->
           <div class="folder-front"></div>
-          <!-- ?�더 ??-->
+          <!-- 폴더 탭 -->
           <div class="folder-tab"></div>
         </div>
 
-        <!-- Card Stack (?�더 ?�에???�옴) -->
+        <!-- Card Stack (폴더 안에서 날아옴) -->
         <div class="card-stack">
           <div class="feature-card card-1">
             <div class="card-content">
-              <div class="card-icon">
+              <div div class="card-icon">
                 <img src="./images/ico_chart.svg" alt="" />
               </div>
               <h3 class="card-title">Publishing</h3>
               <p class="card-desc">
-                HTML5, CSS3, JavaScript<br />SCSS, 반응???�블리싱
+                HTML5, CSS3, JavaScript<br />SCSS, 반응형 퍼블리싱
               </p>
             </div>
           </div>
@@ -775,7 +946,7 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- ?�로?�트 리스???�?�크�??�버?�이 -->
+    <!-- 프로젝트 리스트 오버레이 -->
     <div class="projects-overlay" id="projectsOverlay">
       <div class="overlay-header">
         <h2 class="overlay-title">All Projects</h2>
@@ -787,16 +958,16 @@
 
       <div class="projects-grid-container">
         <div class="projects-grid" id="projectsGrid">
-          <!-- ?�로?�트 카드?�이 ?�적?�로 추�??�니??-->
+          <!-- 프로젝트 카드들이 동적으로 추가됩니다 -->
         </div>
       </div>
     </div>
 
-    <!-- ?�로?�트 ?�세 ?�?�크�??�버?�이 -->
+    <!-- 프로젝트 상세 오버레이 -->
     <div class="project-detail-overlay" id="projectDetailOverlay">
       <div class="detail-header">
         <button class="detail-back" id="backToList" aria-label="Back">
-          <span>??/span>
+          <span>←</span>
           <span>Back</span>
         </button>
         <button class="detail-close" id="closeDetail" aria-label="Close">

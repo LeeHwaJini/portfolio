@@ -5,7 +5,7 @@
 
 // ⭐ 개발 플래그
 const DEV_SKIP_PRELOADER = false;
-const DEV_KEEP_VISIBLE   = true;
+const DEV_KEEP_VISIBLE   = false;
 const DEV_SHOW_BBOX      = false;
 
 // ===================================
@@ -23,8 +23,8 @@ const CAP_H     = FONT_SIZE * 0.68;            // ≈ 112.2 (대문자 높이)
 const LETTER_DOTS = {
   // P: 세로획 위·아래 (0.16→0.19: 세로획 중심으로 이동) + 볼 우측 극단
   'P': b => [
-    { cx: b.x + b.width * 0.19, cy: CAP_TOP + 2 },
-    { cx: b.x + b.width * 0.91, cy: CAP_TOP + CAP_H * 0.27 },
+    { cx: b.x + b.width * 0.19 - 7, cy: CAP_TOP + 1 },
+    { cx: b.x + b.width * 0.91 + 2, cy: CAP_TOP + CAP_H * 0.27 },
     { cx: b.x + b.width * 0.19, cy: BASELINE - 2 },
   ],
   // O: 상·우·하·좌 4극단
@@ -36,9 +36,9 @@ const LETTER_DOTS = {
   ],
   // R: 세로획 위·아래 (0.16→0.19) + 볼 우측 극단 + 볼-다리 접합점 + 다리 끝
   'R': b => [
-    { cx: b.x + b.width * 0.19, cy: CAP_TOP + 2 },
+    { cx: b.x + b.width * 0.19 - 7, cy: CAP_TOP },
     { cx: b.x + b.width * 0.91, cy: CAP_TOP + CAP_H * 0.27 },
-    { cx: b.x + b.width * 0.87, cy: CAP_TOP + CAP_H * 0.54 },
+    { cx: b.x + b.width * 0.54 + 16, cy: CAP_TOP + CAP_H * 0.54 + 5 },
     { cx: b.x + b.width * 0.93, cy: BASELINE - 2 },
     { cx: b.x + b.width * 0.19, cy: BASELINE - 2 },
   ],
