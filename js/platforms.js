@@ -11,7 +11,6 @@ export function initPlatforms() {
   
   if (!swiperElement) return;
 
-  // Swiper 초기화
   const swiper = new Swiper('.platform-swiper', {
     slidesPerView: 'auto',
     centeredSlides: true,
@@ -49,7 +48,6 @@ export function initPlatforms() {
     }
   });
 
-  // 슬라이드 클래스 업데이트
   function updateSlideClasses(swiperInstance) {
     const slides = swiperInstance.slides;
     slides.forEach((slide, index) => {
@@ -67,18 +65,14 @@ export function initPlatforms() {
 
   let currentFilter = 'all';
 
-  // 필터 버튼 이벤트
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // 활성 버튼 변경
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      // 필터 값
       const filter = btn.dataset.filter;
       currentFilter = filter;
 
-      // 슬라이드 필터링
       const slides = swiper.slides;
       let firstVisibleIndex = -1;
 
@@ -95,7 +89,6 @@ export function initPlatforms() {
         }
       });
 
-      // Swiper 업데이트 및 첫 번째 보이는 슬라이드로 이동
       swiper.update();
       if (firstVisibleIndex !== -1) {
         swiper.slideTo(firstVisibleIndex, 500);
@@ -103,7 +96,6 @@ export function initPlatforms() {
     });
   });
 
-  // 초기 애니메이션 (GSAP)
   if (typeof gsap !== 'undefined') {
     gsap.from('.platform-card', {
       opacity: 0,

@@ -12,6 +12,7 @@ export function initSkillsAnimations() {
     ScrollTrigger.create({
       trigger: stat,
       start: "top 85%",
+      invalidateOnRefresh: true,
       onEnter: () => {
         gsap.from(stat, {
           y: 30,
@@ -40,6 +41,7 @@ export function initSkillsAnimations() {
       scrollTrigger: {
         trigger: ".tech-cluster",
         start: "top 80%",
+        invalidateOnRefresh: true,
         toggleActions: "play none none reverse",
       },
       scale: 0,
@@ -56,6 +58,7 @@ export function initSkillsAnimations() {
       scrollTrigger: {
         trigger: ".tech-cluster",
         start: "top 80%",
+        invalidateOnRefresh: true,
         toggleActions: "play none none reverse",
       },
       strokeDasharray: 1000,
@@ -76,6 +79,7 @@ export function initSkillsAnimations() {
     ScrollTrigger.create({
       trigger: item,
       start: "top 85%",
+      invalidateOnRefresh: true,
       onEnter: () => {
         gsap.from(item, {
           y: 40,
@@ -105,16 +109,16 @@ export function initSkillsAnimations() {
     });
   });
 
-  // Tech Nodes Interactive
   initTechNodesInteractive();
 
-  // Skills CTA (있을 경우만)
+  // Skills CTA
   const skillsCta = document.querySelector(".skills-cta");
   if (skillsCta) {
     gsap.from(skillsCta, {
       scrollTrigger: {
         trigger: ".skills-action",
         start: "top 90%",
+        invalidateOnRefresh: true,
         toggleActions: "play none none reverse",
       },
       y: 30,
@@ -124,14 +128,11 @@ export function initSkillsAnimations() {
     });
   }
 
-  // Tech Cluster 마우스 인터랙션
   initTechClusterInteraction();
 }
 
 function initTechNodesInteractive() {
   const techNodes = document.querySelectorAll(".tech-node");
-
-  // 요소가 없으면 종료
   if (techNodes.length === 0) return;
 
   techNodes.forEach((node) => {

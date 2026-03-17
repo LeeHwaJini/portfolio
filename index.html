@@ -22,10 +22,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <!-- Devicon — 기술 스택 공식 SVG 아이콘 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"
+    />
     <!-- Pretendard Dynamic Subset (한글 전용) -->
     <link
       rel="stylesheet"
@@ -307,82 +312,79 @@
       </div>
     </section>
 
-    <!-- About Section Alternative A: Interactive Timeline -->
-    <section class="about-section about-timeline" data-section="about-timeline">
-      <div class="container-full">
-        <div class="section-label">
-          <span class="label-number">01</span>
-          <span class="label-text">About - Timeline</span>
-        </div>
+    <!-- About Section – Editorial Style -->
+    <section class="about-section" data-section="about">
+      <!-- 왼쪽: sticky 타이틀 -->
+      <div class="about-left">
+        <p class="about-label">
+          <span class="about-label-num">01</span>
+          <span class="about-label-txt">About</span>
+        </p>
+        <h2 class="about-title">
+          성장의<br />
+          기록
+        </h2>
+        <p class="about-desc">
+          2022년부터 지금까지,<br />
+          다양한 환경에서<br />
+          웹을 만들어왔습니다.
+        </p>
+      </div>
 
-        <div class="timeline-intro">
-          <h2 class="timeline-title">성장의 기록</h2>
-          <p class="timeline-subtitle">2022년부터 지금까지</p>
-        </div>
-
-        <div class="timeline-line"></div>
-
-        <div class="timeline-items">
-          <div class="timeline-item" data-year="2022">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-year">2022</span>
-              <h3>퍼블리셔 커리어 시작</h3>
-              <p>이벤트/랜딩페이지 제작 및<br />반응형 웹 퍼블리싱</p>
-
-              <div class="detail-features">
-                <span class="feature-tag">HTML5</span>
-                <span class="feature-tag">CSS3</span>
-                <span class="feature-tag">JavaScript</span>
-                <span class="feature-tag">AJAX</span>
-              </div>
+      <!-- 오른쪽: 세로 타임라인 -->
+      <div class="about-right">
+        <div class="about-tl">
+          <div class="about-tl-item">
+            <span class="about-tl-year">2022</span>
+            <h3 class="about-tl-title">퍼블리셔 커리어 시작</h3>
+            <p class="about-tl-desc">
+              이벤트/랜딩페이지 제작 및 반응형 웹 퍼블리싱
+            </p>
+            <div class="detail-features small">
+              <span class="feature-tag">HTML5</span>
+              <span class="feature-tag">CSS3</span>
+              <span class="feature-tag">JavaScript</span>
+              <span class="feature-tag">AJAX</span>
             </div>
           </div>
 
-          <div class="timeline-item" data-year="2023">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-year">2023</span>
-              <h3>다양한 플랫폼 경험</h3>
-              <p>
-                React Native, 카페24, 워드프레스 등<br />다양한 환경에서의
-                퍼블리싱
-              </p>
-
-              <div class="detail-features">
-                <span class="feature-tag">React Native</span>
-                <span class="feature-tag">Cafe24</span>
-                <span class="feature-tag">WordPress</span>
-                <span class="feature-tag">고도몰</span>
-              </div>
+          <div class="about-tl-item">
+            <span class="about-tl-year">2023</span>
+            <h3 class="about-tl-title">다양한 플랫폼 경험</h3>
+            <p class="about-tl-desc">
+              React Native, 카페24, 워드프레스 등 다양한 환경 퍼블리싱
+            </p>
+            <div class="detail-features small">
+              <span class="feature-tag">React Native</span>
+              <span class="feature-tag">Cafe24</span>
+              <span class="feature-tag">WordPress</span>
+              <span class="feature-tag">고도몰</span>
             </div>
           </div>
 
-          <div class="timeline-item" data-year="2024">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-year">2024~2025</span>
-              <h3>Vue.js 프레임워크 도입</h3>
-              <p>Vue.js 문법을 활용한<br />컴포넌트 기반 웹 퍼블리싱</p>
-              <div class="detail-features">
-                <span class="feature-tag">Vue.js</span>
-                <span class="feature-tag">SCSS</span>
-                <span class="feature-tag">Components</span>
-              </div>
+          <div class="about-tl-item">
+            <span class="about-tl-year">2024–25</span>
+            <h3 class="about-tl-title">Vue.js 프레임워크 도입</h3>
+            <p class="about-tl-desc">
+              Vue.js 문법을 활용한 컴포넌트 기반 웹 퍼블리싱
+            </p>
+            <div class="detail-features small">
+              <span class="feature-tag">Vue.js</span>
+              <span class="feature-tag">SCSS</span>
+              <span class="feature-tag">Components</span>
             </div>
           </div>
 
-          <div class="timeline-item" data-year="2026">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-year">2025~2026 (현재)</span>
-              <h3>Vue 기반 프로젝트 진행</h3>
-              <p>Vue 프로젝트 웹 퍼블리싱 및<br />Axios를 활용한 API 연동</p>
-              <div class="detail-features">
-                <span class="feature-tag">Vue.js</span>
-                <span class="feature-tag">Axios</span>
-                <span class="feature-tag">Publishing</span>
-              </div>
+          <div class="about-tl-item">
+            <span class="about-tl-year">현재</span>
+            <h3 class="about-tl-title">Vue 기반 프로젝트 진행</h3>
+            <p class="about-tl-desc">
+              Vue 프로젝트 웹 퍼블리싱 및 Axios를 활용한 API 연동
+            </p>
+            <div class="detail-features small">
+              <span class="feature-tag">Vue.js</span>
+              <span class="feature-tag">Axios</span>
+              <span class="feature-tag">Publishing</span>
             </div>
           </div>
         </div>
@@ -544,107 +546,113 @@
             <!-- Card 1: HTML5 -->
             <div class="gallery-item">
               <div class="gallery-card">
-                <img
-                  class="gallery-image"
-                  src="./images/test1.png"
-                  alt="HTML5"
-                />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">🌐</div>
+                  <div class="gallery-icon">
+                    <i class="devicon-html5-plain colored"></i>
+                  </div>
                   <h4 class="gallery-title">HTML5</h4>
                   <p class="gallery-desc">시맨틱 마크업</p>
                 </div>
               </div>
             </div>
 
-            <!-- Card 2: CSS/SCSS -->
+            <!-- Card 2: CSS3 -->
             <div class="gallery-item">
               <div class="gallery-card">
-                <img
-                  class="gallery-image"
-                  src="./images/test2.png"
-                  alt="CSS/SCSS"
-                />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">🎨</div>
-                  <h4 class="gallery-title">CSS/SCSS</h4>
+                  <div class="gallery-icon">
+                    <i class="devicon-css3-plain colored"></i>
+                  </div>
+                  <h4 class="gallery-title">CSS3</h4>
                   <p class="gallery-desc">반응형 레이아웃</p>
                 </div>
               </div>
             </div>
 
-            <!-- Card 3: JavaScript -->
+            <!-- Card 3: SCSS -->
             <div class="gallery-item">
               <div class="gallery-card">
-                <img
-                  class="gallery-image"
-                  src="./images/test3.png"
-                  alt="JavaScript"
-                />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">⚡</div>
+                  <div class="gallery-icon">
+                    <i class="devicon-sass-original colored"></i>
+                  </div>
+                  <h4 class="gallery-title">SCSS</h4>
+                  <p class="gallery-desc">CSS 전처리기</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: JavaScript -->
+            <div class="gallery-item">
+              <div class="gallery-card">
+                <div class="gallery-overlay">
+                  <div class="gallery-icon">
+                    <i class="devicon-javascript-plain colored"></i>
+                  </div>
                   <h4 class="gallery-title">JavaScript</h4>
                   <p class="gallery-desc">ES6+ 문법</p>
                 </div>
               </div>
             </div>
 
-            <!-- Card 4: Vue.js -->
+            <!-- Card 5: Vue.js -->
             <div class="gallery-item">
               <div class="gallery-card">
-                <img
-                  class="gallery-image"
-                  src="./images/test4.png"
-                  alt="Vue.js"
-                />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">💚</div>
+                  <div class="gallery-icon">
+                    <i class="devicon-vuejs-plain colored"></i>
+                  </div>
                   <h4 class="gallery-title">Vue.js</h4>
                   <p class="gallery-desc">Vue 3 Composition</p>
                 </div>
               </div>
             </div>
 
-            <!-- Card 5: GSAP -->
+            <!-- Card 6: GSAP (인라인 SVG) -->
             <div class="gallery-item">
               <div class="gallery-card">
-                <img
-                  class="gallery-image"
-                  src="./images/test1.png"
-                  alt="GSAP"
-                />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">✨</div>
+                  <div class="gallery-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 50 50"
+                      width="42"
+                      height="42"
+                      aria-label="GSAP"
+                    >
+                      <circle cx="25" cy="25" r="25" fill="#88CE02" />
+                      <text
+                        x="25"
+                        y="31"
+                        font-family="Arial,sans-serif"
+                        font-weight="900"
+                        font-size="15"
+                        text-anchor="middle"
+                        fill="#fff"
+                        letter-spacing="0.5"
+                      >
+                        GS
+                      </text>
+                    </svg>
+                  </div>
                   <h4 class="gallery-title">GSAP</h4>
                   <p class="gallery-desc">ScrollTrigger</p>
                 </div>
               </div>
             </div>
 
-            <!-- Card 6: Responsive -->
+            <!-- Card 7: Git (img SVG) -->
             <div class="gallery-item">
               <div class="gallery-card">
-                <img
-                  class="gallery-image"
-                  src="./images/test2.png"
-                  alt="Responsive"
-                />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">📱</div>
-                  <h4 class="gallery-title">Responsive</h4>
-                  <p class="gallery-desc">크로스 브라우징</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 7: Git -->
-            <div class="gallery-item">
-              <div class="gallery-card">
-                <img class="gallery-image" src="./images/test3.png" alt="Git" />
-                <div class="gallery-overlay">
-                  <div class="gallery-icon">🔀</div>
+                  <div class="gallery-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/git/git-original.svg"
+                      alt="Git"
+                    />
+                  </div>
                   <h4 class="gallery-title">Git</h4>
-                  <p class="gallery-desc">협업 필수 스킬</p>
+                  <p class="gallery-desc">버전 관리</p>
                 </div>
               </div>
             </div>
@@ -652,79 +660,154 @@
             <!-- Card 8: Figma -->
             <div class="gallery-item">
               <div class="gallery-card">
-                <img
-                  class="gallery-image"
-                  src="./images/test4.png"
-                  alt="Figma"
-                />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">🎯</div>
+                  <div class="gallery-icon">
+                    <i class="devicon-figma-plain colored"></i>
+                  </div>
                   <h4 class="gallery-title">Figma</h4>
                   <p class="gallery-desc">디자이너와 협업</p>
                 </div>
               </div>
             </div>
 
-            <!-- Card 9: React Native -->
+            <!-- Card 9: Adobe XD (img SVG) -->
             <div class="gallery-item">
               <div class="gallery-card">
-                <img
-                  class="gallery-image"
-                  src="./images/test1.png"
-                  alt="React Native"
-                />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">📲</div>
+                  <div class="gallery-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/xd/xd-plain.svg"
+                      alt="Adobe XD"
+                    />
+                  </div>
+                  <h4 class="gallery-title">Adobe XD</h4>
+                  <p class="gallery-desc">디자인 협업</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 10: Zeplin (인라인 SVG) -->
+            <div class="gallery-item">
+              <div class="gallery-card">
+                <div class="gallery-overlay">
+                  <div class="gallery-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 50 50"
+                      width="42"
+                      height="42"
+                      aria-label="Zeplin"
+                    >
+                      <rect width="50" height="50" rx="10" fill="#FDBD39" />
+                      <text
+                        x="25"
+                        y="36"
+                        font-family="Arial Black,sans-serif"
+                        font-weight="900"
+                        font-size="28"
+                        text-anchor="middle"
+                        fill="#fff"
+                      >
+                        Z
+                      </text>
+                    </svg>
+                  </div>
+                  <h4 class="gallery-title">Zeplin</h4>
+                  <p class="gallery-desc">디자인 핸드오프</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 11: React Native -->
+            <div class="gallery-item">
+              <div class="gallery-card">
+                <div class="gallery-overlay">
+                  <div class="gallery-icon">
+                    <i class="devicon-react-original colored"></i>
+                  </div>
                   <h4 class="gallery-title">React Native</h4>
                   <p class="gallery-desc">크로스플랫폼 앱</p>
                 </div>
               </div>
             </div>
 
-            <!-- Card 10: TypeScript -->
+            <!-- Card 12: jQuery -->
             <div class="gallery-item">
               <div class="gallery-card">
-                <img
-                  class="gallery-image"
-                  src="./images/test2.png"
-                  alt="TypeScript"
-                />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">🔷</div>
-                  <h4 class="gallery-title">TypeScript</h4>
-                  <p class="gallery-desc">타입 안전성</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 11: jQuery -->
-            <div class="gallery-item">
-              <div class="gallery-card">
-                <img
-                  class="gallery-image"
-                  src="./images/test3.png"
-                  alt="jQuery"
-                />
-                <div class="gallery-overlay">
-                  <div class="gallery-icon">💻</div>
+                  <div class="gallery-icon">
+                    <i class="devicon-jquery-plain colored"></i>
+                  </div>
                   <h4 class="gallery-title">jQuery</h4>
                   <p class="gallery-desc">DOM 조작</p>
                 </div>
               </div>
             </div>
 
-            <!-- Card 12: Webpack -->
+            <!-- Card 13: Jira -->
             <div class="gallery-item">
               <div class="gallery-card">
-                <img
-                  class="gallery-image"
-                  src="./images/test4.png"
-                  alt="Webpack"
-                />
                 <div class="gallery-overlay">
-                  <div class="gallery-icon">📦</div>
-                  <h4 class="gallery-title">Webpack</h4>
-                  <p class="gallery-desc">번들링 도구</p>
+                  <div class="gallery-icon">
+                    <i class="devicon-jira-plain colored"></i>
+                  </div>
+                  <h4 class="gallery-title">Jira</h4>
+                  <p class="gallery-desc">애자일 협업</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 14: Vite -->
+            <div class="gallery-item">
+              <div class="gallery-card">
+                <div class="gallery-overlay">
+                  <div class="gallery-icon">
+                    <i class="devicon-vitejs-plain colored"></i>
+                  </div>
+                  <h4 class="gallery-title">Vite</h4>
+                  <p class="gallery-desc">빠른 번들링</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 15: Slack (img SVG) -->
+            <div class="gallery-item">
+              <div class="gallery-card">
+                <div class="gallery-overlay">
+                  <div class="gallery-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/slack/slack-original.svg"
+                      alt="Slack"
+                    />
+                  </div>
+                  <h4 class="gallery-title">Slack</h4>
+                  <p class="gallery-desc">팀 커뮤니케이션</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 16: PHP -->
+            <div class="gallery-item">
+              <div class="gallery-card">
+                <div class="gallery-overlay">
+                  <div class="gallery-icon">
+                    <i class="devicon-php-plain colored"></i>
+                  </div>
+                  <h4 class="gallery-title">PHP</h4>
+                  <p class="gallery-desc">서버 환경 퍼블리싱</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 17: Java -->
+            <div class="gallery-item">
+              <div class="gallery-card">
+                <div class="gallery-overlay">
+                  <div class="gallery-icon">
+                    <i class="devicon-java-plain colored"></i>
+                  </div>
+                  <h4 class="gallery-title">Java</h4>
+                  <p class="gallery-desc">JSP 환경 퍼블리싱</p>
                 </div>
               </div>
             </div>
@@ -733,129 +816,127 @@
       </div>
     </section>
 
-    <!-- Experience Showcase Section -->
-    <section
-      class="tech-showcase-section circular-slider-section"
-      data-section="experience"
-    >
-      <div class="section-label">
-        <span class="label-number">04</span>
-        <span class="label-text">Experience</span>
-      </div>
+    <!-- Experience Section — Scroll-driven Card Reveal -->
+    <section class="experience-section" data-section="experience">
+      <div class="exp-sticky">
+        <div class="exp-sec-label" id="expSecLabel">04 · EXPERIENCE</div>
 
-      <!-- SVG Mask -->
-      <svg
-        width="1200px"
-        height="600px"
-        viewBox="0 0 1200 600"
-        style="position: absolute; opacity: 0"
-      >
-        <defs>
-          <clipPath id="quarterMask">
-            <path
-              d="M299.001,26.649L0,325.65c330.267,330.268,865.736,330.268,1196.004,0L897.003,26.649C731.868,191.784,464.136,191.784,299.001,26.649z"
-            />
-          </clipPath>
-        </defs>
-      </svg>
+        <svg class="exp-svg-layer" id="expSvgLayer"></svg>
 
-      <!-- Circular Slider -->
-      <div class="content">
-        <ul class="featured-slider" id="wheel">
-          <li class="active">
-            <div class="image">
-              <img src="./images/test1.png" alt="" />
+        <div class="exp-layout">
+          <div class="exp-left">
+            <div class="exp-title-eyebrow">EXPERIENCE</div>
+            <h3 class="exp-title-big">경험이<br />만드는 차이</h3>
+            <div class="exp-title-sub">
+              신규 구축부터 유지보수까지, 다양한 프로젝트 경험
             </div>
+          </div>
 
-            <div class="detail-content active" data-detail="0">
-              <div class="num">01</div>
-              <h2 class="detail-title">신규 구축</h2>
-              <p class="detail-desc">처음부터 끝까지, 완전한 웹사이트 구축</p>
-              <div class="detail-features">
-                <span class="feature-tag">#컴포넌트 관리</span>
-                <span class="feature-tag">#반응형 퍼블리싱</span>
+          <div class="exp-right">
+            <div class="exp-card" id="expCard0">
+              <div class="exp-icon-wrap">
+                <canvas
+                  class="exp-icon-canvas"
+                  id="expIc0"
+                  width="56"
+                  height="56"
+                ></canvas>
+              </div>
+              <div class="exp-card-body">
+                <div class="exp-card-num">01</div>
+                <div class="exp-card-title">신규 구축</div>
+                <div class="exp-card-desc">
+                  처음부터 끝까지, 완전한 웹사이트 구축
+                </div>
+                <div class="detail-features x-small">
+                  <span class="feature-tag">#컴포넌트 관리</span>
+                  <span class="feature-tag">#반응형 퍼블리싱</span>
+                </div>
               </div>
             </div>
-          </li>
-          <li>
-            <div class="image">
-              <img src="./images/test3.png" alt="" />
-            </div>
 
-            <div class="detail-content" data-detail="1">
-              <div class="num">02</div>
-              <h2 class="detail-title">사이트 리뉴얼</h2>
-              <p class="detail-desc">리뉴얼 프로젝트</p>
-              <div class="detail-features">
-                <span class="feature-tag">#코드 분석</span>
-                <span class="feature-tag">#UI/UX 개선</span>
+            <div class="exp-card" id="expCard1">
+              <div class="exp-icon-wrap">
+                <canvas
+                  class="exp-icon-canvas"
+                  id="expIc1"
+                  width="56"
+                  height="56"
+                ></canvas>
+              </div>
+              <div class="exp-card-body">
+                <div class="exp-card-num">02</div>
+                <div class="exp-card-title">사이트 리뉴얼</div>
+                <div class="exp-card-desc">기존 코드를 분석하고 UI/UX 개선</div>
+                <div class="detail-features x-small">
+                  <span class="feature-tag">#코드 분석</span>
+                  <span class="feature-tag">#UI/UX 개선</span>
+                </div>
               </div>
             </div>
-          </li>
-          <li>
-            <div class="image">
-              <img src="./images/test2.png" alt="" />
-            </div>
 
-            <div class="detail-content" data-detail="2">
-              <div class="num">03</div>
-              <h2 class="detail-title">운영 & 유지보수</h2>
-              <p class="detail-desc">안정적인 서비스 운영</p>
-              <div class="detail-features">
-                <span class="feature-tag">#이슈 대응</span>
-                <span class="feature-tag">#콘텐츠 업데이트</span>
+            <div class="exp-card" id="expCard2">
+              <div class="exp-icon-wrap">
+                <canvas
+                  class="exp-icon-canvas"
+                  id="expIc2"
+                  width="56"
+                  height="56"
+                ></canvas>
+              </div>
+              <div class="exp-card-body">
+                <div class="exp-card-num">03</div>
+                <div class="exp-card-title">운영 &amp; 유지보수</div>
+                <div class="exp-card-desc">
+                  안정적인 서비스 운영 및 이슈 대응
+                </div>
+                <div class="detail-features x-small">
+                  <span class="feature-tag">#이슈 대응</span>
+                  <span class="feature-tag">#콘텐츠 업데이트</span>
+                </div>
               </div>
             </div>
-          </li>
-          <li>
-            <div class="image">
-              <img src="./images/test4.png" alt="" />
-            </div>
 
-            <div class="detail-content" data-detail="3">
-              <div class="num">04</div>
-              <h2 class="detail-title">랜딩페이지 제작</h2>
-              <p class="detail-desc">전환율 높은 페이지 구축</p>
-              <div class="detail-features">
-                <span class="feature-tag">#빠른 퍼블리싱</span>
-                <span class="feature-tag">#반응형</span>
+            <div class="exp-card" id="expCard3">
+              <div class="exp-icon-wrap">
+                <canvas
+                  class="exp-icon-canvas"
+                  id="expIc3"
+                  width="56"
+                  height="56"
+                ></canvas>
+              </div>
+              <div class="exp-card-body">
+                <div class="exp-card-num">04</div>
+                <div class="exp-card-title">랜딩페이지 제작</div>
+                <div class="exp-card-desc">전환율 높은 페이지 빠르게 구축</div>
+                <div class="detail-features x-small">
+                  <span class="feature-tag">#빠른 퍼블리싱</span>
+                  <span class="feature-tag">#반응형</span>
+                </div>
               </div>
             </div>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </div>
 
-      <div class="featured-slider-btn-area">
-        <button class="prev nav-prev" aria-label="이전">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
-        <button class="next nav-next" aria-label="다음">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
+        <div class="exp-prog-nav">
+          <div class="exp-pdot-item" onclick="expJumpTo(0)">
+            <div class="exp-pdot on" id="expPd0"></div>
+            <span class="exp-pdot-name">신규 구축</span>
+          </div>
+          <div class="exp-pdot-item" onclick="expJumpTo(1)">
+            <div class="exp-pdot" id="expPd1"></div>
+            <span class="exp-pdot-name">리뉴얼</span>
+          </div>
+          <div class="exp-pdot-item" onclick="expJumpTo(2)">
+            <div class="exp-pdot" id="expPd2"></div>
+            <span class="exp-pdot-name">유지보수</span>
+          </div>
+          <div class="exp-pdot-item" onclick="expJumpTo(3)">
+            <div class="exp-pdot" id="expPd3"></div>
+            <span class="exp-pdot-name">랜딩페이지</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -872,12 +953,38 @@
           <div class="folder-tab"></div>
         </div>
 
-        <!-- Card Stack (폴더 안에서 날아옴) -->
+        <!-- Card Stack -->
         <div class="card-stack">
           <div class="feature-card card-1">
             <div class="card-content">
-              <div div class="card-icon">
-                <img src="./images/ico_chart.svg" alt="" />
+              <div class="card-icon">
+                <svg
+                  viewBox="0 0 256 256"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M69 100L24 128L69 156"
+                    stroke="#2563eb"
+                    stroke-width="18"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M187 100L232 128L187 156"
+                    stroke="#2563eb"
+                    stroke-width="18"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M160 40L96 216"
+                    stroke="#93c5fd"
+                    stroke-width="18"
+                    stroke-linecap="round"
+                    opacity="0.7"
+                  />
+                </svg>
               </div>
               <h3 class="card-title">Publishing</h3>
               <p class="card-desc">
@@ -889,7 +996,35 @@
           <div class="feature-card card-2">
             <div class="card-content">
               <div class="card-icon">
-                <img src="./images/ico_circle_chart.svg" alt="" />
+                <svg
+                  viewBox="0 0 256 256"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M32 96L128 144L224 96L128 48L32 96Z"
+                    fill="#bfdbfe"
+                    stroke="#2563eb"
+                    stroke-width="16"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M32 128L128 176L224 128"
+                    stroke="#2563eb"
+                    stroke-width="16"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M32 160L128 208L224 160"
+                    stroke="#93c5fd"
+                    stroke-width="16"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    opacity="0.6"
+                  />
+                </svg>
               </div>
               <h3 class="card-title">Framework & Library</h3>
               <p class="card-desc">
@@ -901,7 +1036,49 @@
           <div class="feature-card card-3">
             <div class="card-content">
               <div class="card-icon">
-                <img src="./images/ico_message.svg" alt="" />
+                <svg
+                  viewBox="0 0 256 256"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="80"
+                    cy="200"
+                    r="24"
+                    fill="#bfdbfe"
+                    stroke="#2563eb"
+                    stroke-width="14"
+                  />
+                  <circle
+                    cx="80"
+                    cy="56"
+                    r="24"
+                    fill="#bfdbfe"
+                    stroke="#2563eb"
+                    stroke-width="14"
+                  />
+                  <circle
+                    cx="176"
+                    cy="200"
+                    r="24"
+                    fill="#bfdbfe"
+                    stroke="#2563eb"
+                    stroke-width="14"
+                  />
+                  <path
+                    d="M80 80V176"
+                    stroke="#2563eb"
+                    stroke-width="14"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M80 80C80 80 80 140 176 140V176"
+                    stroke="#93c5fd"
+                    stroke-width="14"
+                    stroke-linecap="round"
+                    opacity="0.7"
+                  />
+                </svg>
               </div>
               <h3 class="card-title">Tools & Collaboration</h3>
               <p class="card-desc">
@@ -909,12 +1086,8 @@
               </p>
             </div>
           </div>
-
-          <div class="cir cir1"></div>
-          <div class="cir cir2"></div>
         </div>
 
-        <!-- Final Text -->
         <div class="sequence-text">
           <h2 class="sequence-title">
             <span class="text-left">Creating Digital</span>

@@ -1,0 +1,281 @@
+/* ===================================
+   Experience Section 
+   =================================== */
+
+// ── 섹션 전체 ──
+.experience-section {
+  position: relative;
+  height: 500vh;
+  background: $color-white;
+}
+
+// ── sticky 뷰포트 ──
+.exp-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // 노이즈 텍스처
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+// ── 섹션 레이블 ──
+.exp-sec-label {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  font-family: $font-english;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: $color-gray-hint;
+  z-index: 10;
+
+  @media (max-width: $breakpoint-mobile) {
+    left: 24px;
+  }
+}
+
+// ── SVG 드로잉 레이어 ──
+.exp-svg-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+// ── 메인 레이아웃 ──
+.exp-layout {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  max-width: 1160px;
+
+  @media (max-width: $breakpoint-tablet) {
+    max-width: 960px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    padding: 0 24px;
+    gap: 32px;
+  }
+}
+
+// ── 좌측 타이틀 ──
+.exp-left {
+  flex-shrink: 0;
+  width: 320px;
+  padding-right: 100px; // 텍스트 ↔ SVG 선 사이 여백
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 260px;
+    padding-right: 70px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .exp-title-eyebrow {
+    font-family: $font-english;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    background: linear-gradient(
+      135deg,
+      $color-magic-primary,
+      $color-magic-secondary
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+  }
+
+  .exp-title-big {
+    font-size: 36px;
+    font-weight: 700;
+    color: $color-black;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 28px;
+    }
+  }
+
+  .exp-title-sub {
+    margin-top: 16px;
+    color: $color-black;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+  }
+}
+
+.exp-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 60px;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid $color-black-transparent;
+    padding-top: 24px;
+  }
+}
+
+// ── 카드 ──
+.exp-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+  background: $color-white;
+  border: 1px solid $color-black-transparent;
+  border-radius: 14px;
+  will-change: transform, opacity;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 40px rgba($color-magic-primary, 0.12);
+    border-color: rgba($color-magic-primary, 0.2);
+  }
+}
+
+// ── 아이콘 래퍼 (다크 유리 스타일) ──
+.exp-icon-wrap {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: #0d0d18;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.exp-icon-canvas {
+  width: 56px;
+  height: 56px;
+  display: block;
+}
+
+// ── 카드 텍스트 ──
+.exp-card-body {
+  flex: 1;
+}
+
+.exp-card-num {
+  font-family: $font-english;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: $color-gray-hint;
+  margin-bottom: 3px;
+}
+
+.exp-card-title {
+  font-family: $font-display;
+  font-size: 15px;
+  font-weight: 600;
+  color: $color-black;
+  letter-spacing: -0.01em;
+}
+
+.exp-card-desc {
+  font-family: $font-primary;
+  font-size: 11px;
+  color: $color-gray;
+  margin-top: 3px;
+  line-height: 1.5;
+}
+
+.exp-card-tags {
+  display: flex;
+  gap: 5px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+// ── 진행 도트 네비 ──
+.exp-prog-nav {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 20;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.exp-pdot-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.exp-pdot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $color-gray-hint;
+  border: 1px solid $color-gray-hint;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+
+  &.on {
+    background: linear-gradient(
+      135deg,
+      $color-magic-primary,
+      $color-magic-secondary
+    );
+    border-color: $color-magic-primary;
+    transform: scale(1.4);
+
+    & ~ .exp-pdot-name {
+      color: $color-magic-primary;
+    }
+  }
+}
+
+.exp-pdot-name {
+  font-size: 9px;
+  color: $color-gray-hint;
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+  white-space: nowrap;
+}

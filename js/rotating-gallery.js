@@ -17,12 +17,8 @@ export function initRotatingGallery() {
     return;
   }
 
-  const total = items.length; // 12장
-
-  // 360° 원형 배치: 카드 간격 = 360 / total
-  const angleStep = 360 / total; // 30° (12장 기준)
-
-  // 각 카드의 최종 회전 각도 (0°, 30°, 60° ... 330°)
+  const total = items.length;
+  const angleStep = 360 / total;
   const finalRotations = Array.from({ length: total }, (_, i) => i * angleStep);
 
   // 마지막 카드 등장 애니메이션이 끝나는 시점
@@ -31,26 +27,26 @@ export function initRotatingGallery() {
   let currentTimeline = null;
   let draggableReady = false;
 
-  // ─── 원근감 효과: 앞(0°)은 크고 선명, 뒤(180°)는 작고 흐릿
+  // 앞(0°)은 크고 선명, 뒤(180°)는 작고 흐릿
   const updateDepth = () => {
     const containerRot = gsap.getProperty('.gallery-items', 'rotation') || 0;
     items.forEach((item, index) => {
-      // 전역 각도 계산 (0~360)
       const globalAngle = ((containerRot + finalRotations[index]) % 360 + 360) % 360;
-      // -180~180으로 정규화
       const normalized = globalAngle > 180 ? globalAngle - 360 : globalAngle;
-      // cos 값으로 깊이 계산 (앞: 1, 뒤: 0)
       const depth = (Math.cos((normalized * Math.PI) / 180) + 1) / 2;
 
+      const blurPx = (1 - depth) * 2.5;
+      const filterVal = blurPx > 0.1 ? `blur(${blurPx.toFixed(1)}px)` : 'none';
+
       gsap.set(item, {
-        scale: 0.55 + depth * 0.45,    // 0.55 ~ 1.0
-        opacity: 0.2 + depth * 0.8,    // 0.2 ~ 1.0
-        zIndex: Math.round(depth * 100),
+        scale:   0.55 + depth * 0.45,  // 0.55 ~ 1.0
+        opacity: 0.25 + depth * 0.75,  // 0.25 ~ 1.0
+        zIndex:  Math.round(depth * 100),
+        filter:  filterVal,
       });
     });
   };
 
-  // ─── 초기화 & 애니메이션 실행
   const init = () => {
     if (currentTimeline) {
       currentTimeline.kill();
@@ -89,12 +85,12 @@ export function initRotatingGallery() {
         0
       );
 
-      // 원형 배치로 이동 (모든 등장 애니메이션이 끝난 후)
+      // 모든 등장 애니메이션이 끝난 후 원형 배치로 이동
       timeline.to(item, { scale: 1, duration: 0 }, animStartTime);
       timeline.to(
         item,
         {
-          transformOrigin: 'center 120vh',
+          transformOrigin: 'center 90vh',
           rotation: finalRotations[index],
           duration: 1,
           ease: 'power1.out',
@@ -103,14 +99,13 @@ export function initRotatingGallery() {
       );
     });
 
-    // 원형 배치 완료 후 원근감 효과 적용
     timeline.call(updateDepth, null, animStartTime + 1.1);
 
     currentTimeline = timeline;
     return timeline;
   };
 
-  // ─── 드래그 설정 (카드 1장씩 스냅)
+  // 카드 1장씩 스냅 드래그
   const setupDraggable = () => {
     if (draggableReady) return;
     draggableReady = true;
@@ -121,20 +116,17 @@ export function initRotatingGallery() {
       onDragStart: function () {
         start = this.rotation;
       },
-      onDrag: updateDepth, // 드래그 중 실시간 원근감 업데이트
+      onDrag: updateDepth,
       onDragEnd: function () {
         const diff = this.rotation - start;
 
         let targetRotation;
         if (Math.abs(diff) < angleStep / 2) {
-          // 조금만 움직였으면 원위치
-          targetRotation = start;
+          targetRotation = start;           // 조금만 움직이면 원위치
         } else if (diff > 0) {
-          // 시계 방향 → 다음 카드
-          targetRotation = start + angleStep;
+          targetRotation = start + angleStep; // 시계 방향
         } else {
-          // 반시계 방향 → 이전 카드
-          targetRotation = start - angleStep;
+          targetRotation = start - angleStep; // 반시계 방향
         }
 
         gsap.to('.gallery-items', {
@@ -147,37 +139,24 @@ export function initRotatingGallery() {
     });
   };
 
-  // 스크롤 UP 시 애니메이션 없이 카드를 원형 위치에 바로 배치
-  const quickArrange = () => {
-    if (currentTimeline) {
-      currentTimeline.kill();
-      currentTimeline = null;
-    }
-    gsap.set(items, { clearProps: 'all' });
-    gsap.set('.gallery-items', { rotation: 0 });
-    items.forEach((item, index) => {
-      gsap.set(item, {
-        transformOrigin: 'center 120vh',
-        rotation: finalRotations[index],
-        scale: 1,
-        opacity: 1,
-      });
-    });
-    updateDepth();
+  // 쿨다운 동안 재실행 방지 (경계 근처 반복 통과 시 중복 실행 방지)
+  const COOLDOWN_MS = Math.ceil((animStartTime + 1.5) * 1000);
+  let lastInitAt = 0;
+
+  const tryInit = () => {
+    const now = Date.now();
+    if (now - lastInitAt < COOLDOWN_MS) return;
+    lastInitAt = now;
+    init();
+    setupDraggable();
   };
 
-  // 섹션이 뷰포트 상단에 도달하면 애니메이션 재생
   ScrollTrigger.create({
     trigger: '.rotating-gallery-section',
-    start: 'top top',
-    invalidateOnRefresh: true,  // 리프레시 시 시작 위치 재계산
-    onEnter: () => {
-      init();
-      setupDraggable();
-    },
-    onEnterBack: () => {
-      quickArrange();
-      setupDraggable();
-    },
+    start: 'top 70%',
+    end: 'bottom top',
+    invalidateOnRefresh: true,
+    onEnter: tryInit,
+    onEnterBack: tryInit,
   });
 }
